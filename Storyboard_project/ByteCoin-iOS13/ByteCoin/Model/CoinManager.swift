@@ -9,6 +9,7 @@
 import Foundation
 
 protocol CoinManagerDelegate{
+    
     func didUpdatePrice(price: String, currency: String)
     func didFailWithError(error: Error)
 }
@@ -22,7 +23,7 @@ struct CoinManager {
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
     
     
-    func getCoinPrice(for currency: String){ //delegate.didUpdatePrice 사용
+    func getCoinPrice(for currency: String){ //delegate.didUpdatePrice, delegate.didFailWithError 사용
         
         let urlString = String("\(baseURL)/\(currency)?apikey=\(apiKey)")
         
@@ -43,7 +44,8 @@ struct CoinManager {
                     if let bitcoinPrice = self.parseJSON(safeData){
                         let priceString = String(format: "%.2f", bitcoinPrice)
                         self.delegate?.didUpdatePrice(price: priceString, currency: currency)
-                    }
+                    }// getCoinPrice 함수에서 얻은 값 price 와 currency 는 ViewController에 coinManagerDelegate프로토콜을 사용한
+                    // extension ViewController: CoinManagerDelegate {} 안에서 값을 부여
                 }
                 
             }
