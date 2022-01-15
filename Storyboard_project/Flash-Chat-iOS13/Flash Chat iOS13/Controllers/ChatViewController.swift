@@ -20,7 +20,6 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView.dataSource = self
         title = K.appName
         navigationItem.hidesBackButton = true
