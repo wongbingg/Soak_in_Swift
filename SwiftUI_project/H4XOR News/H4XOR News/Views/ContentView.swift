@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var networkManager = NetworkManager()
+    @ObservedObject var networkManager = NetworkManager() //model 가져오기
     
     var body: some View {
         NavigationView{
