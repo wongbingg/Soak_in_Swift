@@ -10,11 +10,17 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
 
-    var itemArray = ["Find Mike","Buy Eggos","Destroy Demogorgon"]
+    var itemArray = [Item]()
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print(dataFilePath!)
         
+        loadItems()
+
     }
 
     //MARK - Tableview Datasource Methods
@@ -28,7 +34,14 @@ class TodoListViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
         
-        cell.textLabel?.text = itemArray[indexPath.row]
+        let item = itemArray[indexPath.row]
+        
+        cell.textLabel?.text = item.title
+        
+        //Ternary operator ==>
+        //value = condition ? valueIfTrue : valueIfFalse
+        
+        cell.accessoryType = item.done ? .checkmark : .none // cell.accesoryType 는 item.done이 (true면)checkmark : (false면) none
         
         return cell
     }
@@ -36,13 +49,9 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(itemArray[indexPath.row])
    
-        
-        if  tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark { // 체크마크가 있으면 클릭시 없에고, 없으면 클릭시 생기게
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        }else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
-        
+        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+
+        saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true) // 셀 선택 시 원래는 회색을 유지함, 하지만 이 설정으로 깜빡임 정도로만 보이게 한다
     }
@@ -57,10 +66,13 @@ class TodoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //what will happen once the clicks the Add Item button on our UIAlert
             
-            self.itemArray.append(textField.text!) // itemArray에 append 는 된다 (디버깅으로 브레이크 포인트 잡고 확인함) but showing 이 안됨
             
-            self.tableView.reloadData() //이 부분을 통해 show가 가능함
+            let newItem = Item()
+            newItem.title = textField.text!
             
+            self.itemArray.append(newItem) // itemArray에 append 는 된다 (디버깅으로 브레이크 포인트 잡고 확인함) but showing 이 안됨
+            
+            self.saveItems()
         }
         
         alert.addTextField { (alertTextField) in
@@ -74,6 +86,42 @@ class TodoListViewController: UITableViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
+    }
+    //MARK - Model Manupulation Methods
+    
+    func saveItems() {
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        } catch{
+            print("Error encoding item array, \(error)")
+        }
+        
+        self.tableView.reloadData() //이 부분을 통해 show가 가능함
+    }
+    
+//    func loadItems() {
+//        let data = try? Data(contentsOf: dataFilePath!) {
+//            let decoder = PropertyListDecoder()
+//            do{
+//            itemArray = try decoder.decode([Item].self, from: data)
+//            }catch {
+//                print("Error decoding item array, \(error)")
+//            }
+//        }
+//    }
+    
+    func loadItems() {
+        let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do{
+            itemArray = try decoder.decode([Item].self, from: data)
+            }catch {
+                print("Error decoding item array, \(error)")
+            }
+        }
     }
     
 }
