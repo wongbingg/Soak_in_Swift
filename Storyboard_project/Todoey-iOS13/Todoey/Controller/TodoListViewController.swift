@@ -17,7 +17,8 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(dataFilePath!)
+        
+        print(dataFilePath)
         
         loadItems()
 
@@ -66,7 +67,6 @@ class TodoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //what will happen once the clicks the Add Item button on our UIAlert
             
-            
             let newItem = Item()
             newItem.title = textField.text!
             
@@ -87,6 +87,8 @@ class TodoListViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    
     //MARK - Model Manupulation Methods
     
     func saveItems() {
@@ -102,19 +104,8 @@ class TodoListViewController: UITableViewController {
         self.tableView.reloadData() //이 부분을 통해 show가 가능함
     }
     
-//    func loadItems() {
-//        let data = try? Data(contentsOf: dataFilePath!) {
-//            let decoder = PropertyListDecoder()
-//            do{
-//            itemArray = try decoder.decode([Item].self, from: data)
-//            }catch {
-//                print("Error decoding item array, \(error)")
-//            }
-//        }
-//    }
-    
     func loadItems() {
-        let data = try? Data(contentsOf: dataFilePath!) {
+        if let data = try? Data(contentsOf: dataFilePath!) {
             let decoder = PropertyListDecoder()
             do{
             itemArray = try decoder.decode([Item].self, from: data)
