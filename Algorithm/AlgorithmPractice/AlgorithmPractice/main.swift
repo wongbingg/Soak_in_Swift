@@ -1,8 +1,8 @@
 //
-//  main2.swift
+//  File.swift
 //  AlgorithmPractice
 //
-//  Created by 이원빈 on 2022/01/15.
+//  Created by 이원빈 on 2022/01/20.
 //
 
 import Foundation
