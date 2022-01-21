@@ -9,18 +9,21 @@
 import UIKit
 import RealmSwift
 
-class CategoryViewController: UITableViewController {
+
+class CategoryViewController: SwipeTableViewController {
     
     let realm = try! Realm()
-
+    
     var categories: Results<Category>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadCategories()
+        
+        tableView.rowHeight = 80.0
     }
-
+    
     //MARK: - TableView Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -28,11 +31,11 @@ class CategoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added yet"
-
+        
         return cell
     }
     
@@ -90,12 +93,12 @@ class CategoryViewController: UITableViewController {
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new Category"
             textField = alertTextField //alertTextField 를 밖으로 꺼내 쓰기위해 textField 에 담아준다
-
+            
         }
         
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
     }
-
+    
 }

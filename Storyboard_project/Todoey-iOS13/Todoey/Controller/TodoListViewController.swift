@@ -12,6 +12,7 @@ import RealmSwift
 class TodoListViewController: UITableViewController {
     
     var todoItems: Results<Item>?
+    
     let realm = try! Realm()
     
     
@@ -57,29 +58,24 @@ class TodoListViewController: UITableViewController {
     }
     //MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print(itemArray[indexPath.row])
         
-        //        context.delete(itemArray[indexPath.row])
-        //        itemArray.remove(at: indexPath.row)
+        if let item = todoItems?[indexPath.row] {
+            do{
+                try realm.write {
+                    item.done = !item.done
+                }
+            } catch{
+                print("Error saving done status, \(error)")
+            }
+        }
         
-//        todoItems[indexPath.row].done = !todoItems[indexPath.row].done
-//
-//        saveItems() //commit 이랑 비슷
+        tableView.reloadData()
         
         tableView.deselectRow(at: indexPath, animated: true) // 셀 선택 시 원래는 회색을 유지함, 하지만 이 설정으로 깜빡임 정도로만 보이게 한다
     }
     
-    //MARK: - Model Manupulation Methods
     
- 
-    
-    func loadItems() { //READ, Item.fetch.. 이라는 default Value를 주어줌 그래서 loadItem() 이렇게 부르기가능
 
-        todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
-
-        tableView.reloadData()
-    }
-}
 
     //MARK: - Add New Items
     
@@ -97,7 +93,9 @@ class TodoListViewController: UITableViewController {
                     try self.realm.write {
                         let newItem = Item()
                         newItem.title = textField.text!
+                        newItem.dateCreated = Date()
                         currentCategory.items.append(newItem)
+                        
                 }
                 }catch{
                     print("Error saving new item, \(error)")
@@ -117,34 +115,40 @@ class TodoListViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
-    
 
+    
+//MARK: - Model Manupulation Methods
+    
+ 
+    
+    func loadItems() { //READ, Item.fetch.. 이라는 default Value를 주어줌 그래서 loadItem() 이렇게 부르기가능
+
+        todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+
+        tableView.reloadData()
+    }
+}
 
 //MARK: - Search bar methods
-//extension TodoListViewController: UISearchBarDelegate {
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { //search버튼 클릭 시,
-//
-//        let request : NSFetchRequest<Item> = Item.fetchRequest()
-//
-//        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!) //search.text 에 쓴 단어가 포함된 항목을 찾아라!
-//
-//        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-//
-//        loadItems(with: request, predicate: predicate)
-//
-//    }
-//
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) { // searchBar에 text입력 후 x버튼으로 지웠을 때,
-//        if searchBar.text?.count == 0 {
-//            loadItems() //다시 원래 List로 돌아옴
-//
-//            DispatchQueue.main.async { // keyboard가 내려가게 하기위한 명령어 (이 명령이 없으면 그대로 키보드 떠있음)
-//                searchBar.resignFirstResponder()
-//            }
-//        }
-//    }
-//}
+extension TodoListViewController: UISearchBarDelegate {
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { //search버튼 클릭 시,
+
+        todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+        
+        tableView.reloadData()
+    }
+
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) { // searchBar에 text입력 후 x버튼으로 지웠을 때,
+        if searchBar.text?.count == 0 {
+            loadItems() //다시 원래 List로 돌아옴
+
+            DispatchQueue.main.async { // keyboard가 내려가게 하기위한 명령어 (이 명령이 없으면 그대로 키보드 떠있음)
+            searchBar.resignFirstResponder()
+            }
+        }
+    }
+}
 
 
