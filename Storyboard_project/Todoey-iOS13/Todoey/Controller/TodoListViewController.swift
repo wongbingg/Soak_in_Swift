@@ -9,25 +9,21 @@
 import UIKit
 import RealmSwift
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: SwipeTableViewController {
     
     var todoItems: Results<Item>?
-    
     let realm = try! Realm()
-    
     
     var selectedCategory: Category? {
         didSet{ // to specify what should happen when a variable gets set with a new value
             loadItems()
         }
     }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)) // where the data is being stored for our current app
+//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)) // where the data is being stored for our current app
 
     }
     
@@ -40,16 +36,11 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let item = todoItems?[indexPath.row] {
-            
             cell.textLabel?.text = item.title
-            
-            //Ternary operator ==>
-            //value = condition ? valueIfTrue : valueIfFalse
-            
-            cell.accessoryType = item.done ? .checkmark : .none // cell.accesoryType 는 item.done이 (true면)checkmark : (false면) none
+            cell.accessoryType = item.done ? .checkmark : .none
         }else {
             cell.textLabel?.text = "No Items Added"
         }
@@ -74,9 +65,27 @@ class TodoListViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true) // 셀 선택 시 원래는 회색을 유지함, 하지만 이 설정으로 깜빡임 정도로만 보이게 한다
     }
     
+    //MARK: - Model Manupulation Methods
+        func loadItems() { //READ, Item.fetch.. 이라는 default Value를 주어줌 그래서 loadItem() 이렇게 부르기가능
+
+            todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+
+            tableView.reloadData()
+        }
+    //MARK: - Delete Data From Swipe
     
-
-
+    override func updateModel(at indexPath: IndexPath) {
+        
+        if let itemForDeletion = self.todoItems?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(itemForDeletion)
+                    }
+            }catch {
+                print("Error deleting category, \(error)")
+            }
+        }
+    }
     //MARK: - Add New Items
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -107,25 +116,10 @@ class TodoListViewController: UITableViewController {
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new item"
             textField = alertTextField //alertTextField 를 밖으로 꺼내 쓰기위해 textField 에 담아준다
-
         }
-        
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-    }
-    
-
-    
-//MARK: - Model Manupulation Methods
-    
- 
-    
-    func loadItems() { //READ, Item.fetch.. 이라는 default Value를 주어줌 그래서 loadItem() 이렇게 부르기가능
-
-        todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
-
-        tableView.reloadData()
     }
 }
 

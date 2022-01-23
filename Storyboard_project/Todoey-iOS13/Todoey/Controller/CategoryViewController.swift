@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-
+import ChameleonFramework
 
 class CategoryViewController: SwipeTableViewController {
     
@@ -21,7 +21,7 @@ class CategoryViewController: SwipeTableViewController {
         
         loadCategories()
         
-        tableView.rowHeight = 80.0
+        tableView.separatorStyle = .none
     }
     
     //MARK: - TableView Datasource Methods
@@ -32,14 +32,16 @@ class CategoryViewController: SwipeTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added yet"
+        
+        cell.backgroundColor = UIColor.randomFlat()
         
         return cell
     }
     
-    //MARK: - TableView Delegate Methos
+    //MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToItems", sender: self)
     }
@@ -54,8 +56,6 @@ class CategoryViewController: SwipeTableViewController {
     
     //MARK: - Data Manipulation Methods
     func save(category: Category) { //Create Update Delete
-        
-        
         do {
             try realm.write {
                 realm.add(category)
@@ -73,6 +73,22 @@ class CategoryViewController: SwipeTableViewController {
         
         tableView.reloadData()
     }
+    
+    //MARK: - Delete Data From Swipe
+    
+    override func updateModel(at indexPath: IndexPath) {
+        
+        if let categoryForDeletion = self.categories?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(categoryForDeletion)
+                    }
+            }catch {
+                print("Error deleting category, \(error)")
+            }
+        }
+    }
+    
     //MARK: - Add New Categories
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -95,10 +111,9 @@ class CategoryViewController: SwipeTableViewController {
             textField = alertTextField //alertTextField 를 밖으로 꺼내 쓰기위해 textField 에 담아준다
             
         }
-        
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
     }
-    
+
 }
