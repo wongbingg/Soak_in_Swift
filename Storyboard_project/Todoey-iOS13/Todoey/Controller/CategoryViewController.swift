@@ -22,6 +22,14 @@ class CategoryViewController: SwipeTableViewController {
         loadCategories()
         
         tableView.separatorStyle = .none
+        
+      
+    }
+    override func viewWillAppear(_ animated: Bool) {
+
+        guard let navBar = navigationController?.navigationBar else {fatalError("Navigation controller does not exist.")}
+
+        navBar.backgroundColor = UIColor(hexString: "1D9BF6")
     }
     
     //MARK: - TableView Datasource Methods
@@ -31,12 +39,18 @@ class CategoryViewController: SwipeTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added yet"
-        
-        cell.backgroundColor = UIColor.randomFlat()
+        if let category = categories?[indexPath.row] {
+            
+            cell.textLabel?.text = category.name
+            
+            guard let categoryColor = UIColor(hexString: category.color) else {fatalError()}
+            
+            cell.backgroundColor = categoryColor
+            cell.textLabel?.textColor = ContrastColorOf(categoryColor, returnFlat: true)
+        }
         
         return cell
     }
@@ -64,7 +78,7 @@ class CategoryViewController: SwipeTableViewController {
             print("Error saving context \(error)")
         }
         
-        self.tableView.reloadData() //이 부분을 통해 show가 가능함
+        self.tableView.reloadData()
     }
     
     func loadCategories(){
@@ -102,6 +116,7 @@ class CategoryViewController: SwipeTableViewController {
             
             let newCategory = Category()
             newCategory.name = textField.text!
+            newCategory.color = UIColor.randomFlat().hexValue() //added
             
             self.save(category: newCategory)
         }
