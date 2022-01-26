@@ -1,5 +1,5 @@
 import UIKit
-//학교 - 초,중,고
+
 enum School {
 //    case elementary
 //    case middle
@@ -16,7 +16,7 @@ enum Grade : Int {
     case second = 2
 }
 
-let yourGrade = Grade.second.rawValue
+let yourGrade = Grade.second.rawValue //.rawValue 가 없으면 2가 출력이 안되네..?
 print("yourGrade: \(yourGrade)")
 
 enum SchoolDetail {
