@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:">
+      location = "self:/Users/leewonbeen/Desktop/swift/BeginningSwift/for_in_where.playground">
    </FileRef>
 </Workspace>

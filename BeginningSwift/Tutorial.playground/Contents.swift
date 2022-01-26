@@ -48,7 +48,7 @@ struct DatabaseManager {
     
     private var serverName = "Server 1" // 이 struct 안에서만 사용가능
     
-    private func saveData(data:String) -> Bool {
+    func saveData(data:String) -> Bool {
         print(serverName)
         //this code saves the data and returns a boolean result
         return true
@@ -58,6 +58,7 @@ struct DatabaseManager {
 
 
 struct ChatView {
+    
     var message = "Hello"
     
     func sendChat(){
@@ -65,6 +66,6 @@ struct ChatView {
         var db = DatabaseManager()
         
         let Successful = db.saveData(data: message)
-        // Check the successful boolea value, if unsuccessful, show alert to usre
+        // Check the successful boolean value, if unsuccessful, show alert to usre
     }
 }
