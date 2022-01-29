@@ -9,39 +9,52 @@ import Foundation
 
 class ViewModel: NSObject {
     var user: User! //Model
-    var userName: String {return user.name}
+    var userName: String = "name"
     var email: String {return user.email}
     
     typealias authenticationLoginCallback = (_ status: Bool, _ message: String) -> Void //callback
     var callback: authenticationLoginCallback?
-    
-    //로그인 유효성 검사
-    func authenticationUser(_ email: String, _ password: String) {
-            if self.userName.count != 0 {
+
+    func authenticateUserWith(_ username: String, andPassword password: String) {  //로그인 유효성 검사
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            if username.count != 0{
                 if password.count != 0 {
-                    self.verifyUser(self.userName, password)
-                }else {
-                    //self.callback?(false, "password error")
+                    self.verifyUser(username, password)
+                } else {
+                    self.callback?(false, "Password should not be empty")
                 }
+                
             }else {
-                //self.callback?(false, "user error")
+                self.callback?(false, "Username should not be empty")
             }
         }
+    }
     
-    //유저확인
-    fileprivate func verifyUser(_ email: String, _ password: String) {
-        if userName == "test" && password == "1234" {
+    
+    
+    //    //유저확인
+    //    fileprivate func verifyUser(_ email: String, _ password: String) {
+    //        if userName == "test" && password == "1234" {
+    //            user = User(name: userName, email: "\(userName)@gmail.com")
+    //            self.callback?(true, "success")
+    //        }else {
+    //            self.callback?(false, "Please enter valid source")
+    //        }
+    //    }
+    fileprivate func verifyUser(_ username: String, _ password: String) {
+        if username == "test" && password == "1234" {
             user = User(name: userName, email: "\(userName)@gmail.com")
             self.callback?(true, "success")
         }else {
-            self.callback?(false, "Please enter valid source")
+            self.callback?(false, "Please enter valid crenetials")
         }
     }
+    
     
     //로그인 완료 시 callback 메소드
     
     func loginCompletion(callBack: @escaping authenticationLoginCallback) {
         self.callback = callBack
     }
-
+    
 }
