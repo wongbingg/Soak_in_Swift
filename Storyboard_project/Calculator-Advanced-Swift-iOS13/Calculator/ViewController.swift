@@ -12,96 +12,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
     
-    var number:String = ""
-    var lst:[Int] = []
-    var tool:String = ""
+    private var isFinishedTypingNumber: Bool = true
     
     
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         
         //What should happen when a non-number button is pressed
-        lst.append(Int(number)!)
-        number = ""
-        print(lst)
         
-        if let calcButton = sender.currentTitle{
-            if lst.count > 1 {
-                switch tool {
-                    
-                case "+":
-                    var result = lst[0] + lst[1]
-                    lst[0] = result
-                    lst.popLast()
-                    displayLabel.text = String(lst[0])
-                case "-":
-                    var result = lst[0] - lst[1]
-                    lst[0] = result
-                    lst.popLast()
-                    displayLabel.text = String(lst[0])
-                case "×":
-                    var result = lst[0] * lst[1]
-                    lst[0] = result
-                    lst.popLast()
-                    displayLabel.text = String(lst[0])
-                case "÷":
-                    var result = lst[0] / lst[1]
-                    lst[0] = result
-                    lst.popLast()
-                    displayLabel.text = String(lst[0])
-                case "=":
-                    tool = "="
-                    
-                default:
-                    print("error occur!!")
-                }
-                switch calcButton {
-                    
-                case "+":
-                    tool = "+"
-                case "-":
-                    tool = "-"
-                case "×":
-                    tool = "×"
-                case "÷":
-                    tool = "÷"
-                case "=":
-                    tool = "="
-                case "AC":
-                    lst = [0]
-                default:
-                    print("error occur!!")
-                }
-            }else {
-                switch calcButton {
-                    
-                case "+":
-                    tool = "+"
-                case "-":
-                    tool = "-"
-                case "×":
-                    tool = "×"
-                case "÷":
-                    tool = "÷"
-                case "=":
-                    tool = "="
-                case "AC":
-                    lst = [0]
-                default:
-                    print("error occur!!")
-                }
-            }
-            
-            
-        }
+        isFinishedTypingNumber = true
         
-        
-        print(tool)
+     
     }
-    
-    
-    
-    
-    
     
     @IBAction func numButtonPressed(_ sender: UIButton) {
         
@@ -109,13 +30,13 @@ class ViewController: UIViewController {
         
         if let numValue = sender.currentTitle {
             
-            number += numValue
-            displayLabel.text = number
-            
+            if isFinishedTypingNumber{
+                displayLabel.text = numValue
+                isFinishedTypingNumber = false
+            } else {
+                displayLabel.text = displayLabel.text! + numValue
+            }
         }
-        
-        
     }
-    
 }
 
