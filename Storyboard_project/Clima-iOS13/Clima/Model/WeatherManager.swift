@@ -31,18 +31,18 @@ struct WeatherManager {
     
     func performRequest(with urlString: String) {
         
-        if let url = URL(string: urlString){
+        if let url = URL(string: urlString){ // url 값이 존재한다면
             
-            let session = URLSession(configuration: .default)
+            let session = URLSession(configuration: .default) //?
             
             let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
+                if error != nil { // 에러가 존재하면!
                     self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 
-                if let safeData = data {
-                   if let weather = self.parseJSON(safeData){ //Optional Bind
+                if let safeData = data { // data값이 존재하면,
+                   if let weather = self.parseJSON(safeData){ //data값을 parse 한 값이 존재하면,
                        self.delegate?.didUpdateWeather(self, weather: weather)
                 }
             }
@@ -51,15 +51,17 @@ struct WeatherManager {
             task.resume()
         }
     }
+    
     func parseJSON(_ weatherData: Data)-> WeatherModel? {
         let decoder = JSONDecoder()
         do{
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            //여기서 weatherData 가 json 파일에 해당
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
-            let name = decodedData.name
+            let name = decodedData.name //json파일에서 추출하기
             
-            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
+            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp) //WeatherModel에 parse한 값을 넣어준다 --> struct WeatherModel 에서는 그 값을 가공해준다
             return weather
          
         } catch {
