@@ -31,7 +31,7 @@ struct CalculatorBrain {
         }
         
     }
-    func getAdvice() -> String {
+    func getAdvice() -> String { // 값 얻기 등의 get 함수는 클로져
         return bmi?.advice ?? "No advice"
     }
     func getColor() -> UIColor {
