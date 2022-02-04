@@ -1,17 +1,17 @@
-//<11022> A+B 
+//<11022> A+B - 8
 
 import Foundation
 
-var input = readLine().map{Int($0)!}
+var T = readLine().map{Int($0)!}!
 var lst:[String] = []
-if let T = input {
-    for i in 1...T {
-        var N = readLine()?.split(separator: " ").map{Int($0)!}
-        if let n = N {
-        lst.append("Case #\(i): \(n[0]) + \(n[1]) = \(n[0] + n[1])")
-        }
-    }
-    for j in lst{
-        print(j)
+
+for i in 1...T {
+    var input = readLine()?.split(separator: " ").map{Int($0)!}
+    if let n = input {
+        var result = "Case #\(i): \(n[0]) + \(n[1]) = \(n[0] + n[1])"
+        lst.append(result)
     }
 }
+for j in lst {
+        print(j)
+    }
