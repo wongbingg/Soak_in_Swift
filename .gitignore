@@ -21,6 +21,6 @@ DerivedData
 
 #CocoaPods
 Pods/
-
+.mlmodel
 
 
