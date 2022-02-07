@@ -31,8 +31,8 @@ extension ViewController: CoinManagerDelegate {
     
     func didUpdatePrice(price: String, currency: String) { //업데이트 시, 뷰에 반영되는 것
         DispatchQueue.main.async {
-            self.bitcoinLabel.text = price //비트코인 값
-            self.currencyLabel.text = currency // 환전머니 값
+            self.bitcoinLabel.text = price // 비트코인 값
+            self.currencyLabel.text = currency // 어느나라통화
         }
     }
     

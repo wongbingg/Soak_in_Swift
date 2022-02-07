@@ -19,12 +19,6 @@ class ViewController: UIViewController {
         
         imageView.image = ballArray.randomElement()
     }
-    
-    
-    
-    
-
-
 
 }
 
