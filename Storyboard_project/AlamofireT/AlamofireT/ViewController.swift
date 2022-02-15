@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             let decoder = JSONDecoder()
             do{
                 let decodedData = try decoder.decode(WeatherData.self, from: response.data!) //WeatherData 부분에 해당 링크의 데이터모델 투입
-                print(decodedData.name) // 값만 빼오기
+                self.textLabel.text = decodedData.name // 값만 빼오기
                 
             } catch {
                 print("default error catch") // 그냥 임의로 넣어준 값
