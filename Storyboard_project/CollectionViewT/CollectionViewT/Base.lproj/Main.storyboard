@@ -17,12 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pWl-Cl-chQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="144"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pWl-Cl-chQ">
+                                <rect key="frame" x="30" y="227" width="354" height="206"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="yAH-M8-zKv"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Jq4-Pf-fxR">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -31,7 +28,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCell" id="KG5-0L-hTJ" customClass="BannerCell" customModule="CollectionViewT" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="8" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="39" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CQI-h8-egb" customClass="BannerCell" customModule="CollectionViewT" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -63,10 +60,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pWl-Cl-chQ" secondAttribute="trailing" id="5XA-Fo-HMi"/>
-                            <constraint firstItem="pWl-Cl-chQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gQn-Mp-1qs"/>
-                            <constraint firstItem="pWl-Cl-chQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ldC-ut-ncQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pWl-Cl-chQ" secondAttribute="bottom" constant="750" id="r7P-Hr-Mh2"/>
+                            <constraint firstItem="pWl-Cl-chQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Bkc-iX-UTI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pWl-Cl-chQ" secondAttribute="bottom" constant="429" id="DUG-Pc-A6R"/>
+                            <constraint firstItem="pWl-Cl-chQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="183" id="P1e-Ub-47D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pWl-Cl-chQ" secondAttribute="trailing" constant="30" id="h3z-4u-1CE"/>
                         </constraints>
                     </view>
                     <connections>
