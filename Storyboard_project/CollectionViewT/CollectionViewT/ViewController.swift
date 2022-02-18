@@ -48,6 +48,7 @@ class ViewController: UIViewController ,UICollectionViewDataSource, UICollection
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         nowPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
+    
     //2초마다 실행되는 타이머
     func bannerTimer() {
         let _: Timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (Timer) in

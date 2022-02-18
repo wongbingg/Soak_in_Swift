@@ -2,7 +2,7 @@
 
 let greeting = "Hello, World!"
 
-let index = greeting.index(of: ",") ?? greeting.endIndex
+let index = greeting.firstIndex(of: ",") ?? greeting.endIndex
 
 let beginning = greeting[..<index]
 
