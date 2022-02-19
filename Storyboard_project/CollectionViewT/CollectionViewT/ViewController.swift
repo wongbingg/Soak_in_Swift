@@ -17,7 +17,7 @@ class ViewController: UIViewController ,UICollectionViewDataSource, UICollection
     var nowPage: Int = 0
     
     //데이터 배열
-    let dataArray:Array<UIImage> = [UIImage(named: "1.png")!,UIImage(named: "2.png")!,UIImage(named: "3.png")!]
+    let dataArray:Array<UIImage> = [UIImage(named: "1.png")!,UIImage(named: "2.png")!,UIImage(named: "3.png")!,UIImage(named: "4.jpg")!]
     
     
     override func viewDidLoad() {

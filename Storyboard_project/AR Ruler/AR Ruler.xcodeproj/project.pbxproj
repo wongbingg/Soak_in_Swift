@@ -7,37 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF492ED827C0DA3100460E95 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF492ED727C0DA3100460E95 /* 4.jpg */; };
-		AF573E0027BCBCCD00C2925C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF573DFF27BCBCCD00C2925C /* AppDelegate.swift */; };
-		AF573E0227BCBCCD00C2925C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF573E0127BCBCCD00C2925C /* SceneDelegate.swift */; };
-		AF573E0427BCBCCD00C2925C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF573E0327BCBCCD00C2925C /* ViewController.swift */; };
-		AF573E0727BCBCCD00C2925C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF573E0527BCBCCD00C2925C /* Main.storyboard */; };
-		AF573E0927BCBCCE00C2925C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF573E0827BCBCCE00C2925C /* Assets.xcassets */; };
-		AF573E0C27BCBCCE00C2925C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF573E0A27BCBCCE00C2925C /* LaunchScreen.storyboard */; };
-		AF573E1627BCC51C00C2925C /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF573E1527BCC51C00C2925C /* BannerCell.swift */; };
-		AF573E1C27BCCE0300C2925C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF573E1927BCCE0200C2925C /* 3.png */; };
-		AF573E1D27BCCE0300C2925C /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF573E1A27BCCE0300C2925C /* 1.png */; };
-		AF573E1E27BCCE0300C2925C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF573E1B27BCCE0300C2925C /* 2.png */; };
+		AF34AF9C27C10F7F00962D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34AF9B27C10F7F00962D7B /* AppDelegate.swift */; };
+		AF34AF9E27C10F7F00962D7B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AF34AF9D27C10F7F00962D7B /* art.scnassets */; };
+		AF34AFA027C10F7F00962D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34AF9F27C10F7F00962D7B /* ViewController.swift */; };
+		AF34AFA327C10F7F00962D7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF34AFA127C10F7F00962D7B /* Main.storyboard */; };
+		AF34AFA527C10F8000962D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF34AFA427C10F8000962D7B /* Assets.xcassets */; };
+		AF34AFA827C10F8000962D7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF34AFA627C10F8000962D7B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AF492ED727C0DA3100460E95 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
-		AF573DFC27BCBCCD00C2925C /* CollectionViewT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewT.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF573DFF27BCBCCD00C2925C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF573E0127BCBCCD00C2925C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF573E0327BCBCCD00C2925C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF573E0627BCBCCD00C2925C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AF573E0827BCBCCE00C2925C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF573E0B27BCBCCE00C2925C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AF573E0D27BCBCCE00C2925C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF573E1527BCC51C00C2925C /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
-		AF573E1927BCCE0200C2925C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		AF573E1A27BCCE0300C2925C /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		AF573E1B27BCCE0300C2925C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		AF34AF9827C10F7F00962D7B /* AR Ruler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Ruler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF34AF9B27C10F7F00962D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF34AF9D27C10F7F00962D7B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		AF34AF9F27C10F7F00962D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF34AFA227C10F7F00962D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF34AFA427C10F8000962D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF34AFA727C10F8000962D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AF573DF927BCBCCD00C2925C /* Frameworks */ = {
+		AF34AF9527C10F7F00962D7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,77 +36,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AF573DF327BCBCCD00C2925C = {
+		AF34AF8F27C10F7F00962D7B = {
 			isa = PBXGroup;
 			children = (
-				AF573DFE27BCBCCD00C2925C /* CollectionViewT */,
-				AF573DFD27BCBCCD00C2925C /* Products */,
+				AF34AF9A27C10F7F00962D7B /* AR Ruler */,
+				AF34AF9927C10F7F00962D7B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AF573DFD27BCBCCD00C2925C /* Products */ = {
+		AF34AF9927C10F7F00962D7B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF573DFC27BCBCCD00C2925C /* CollectionViewT.app */,
+				AF34AF9827C10F7F00962D7B /* AR Ruler.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF573DFE27BCBCCD00C2925C /* CollectionViewT */ = {
+		AF34AF9A27C10F7F00962D7B /* AR Ruler */ = {
 			isa = PBXGroup;
 			children = (
-				AF573DFF27BCBCCD00C2925C /* AppDelegate.swift */,
-				AF573E0127BCBCCD00C2925C /* SceneDelegate.swift */,
-				AF573E0327BCBCCD00C2925C /* ViewController.swift */,
-				AF573E1527BCC51C00C2925C /* BannerCell.swift */,
-				AF573E0527BCBCCD00C2925C /* Main.storyboard */,
-				AF573E0827BCBCCE00C2925C /* Assets.xcassets */,
-				AF573E1A27BCCE0300C2925C /* 1.png */,
-				AF573E1B27BCCE0300C2925C /* 2.png */,
-				AF573E1927BCCE0200C2925C /* 3.png */,
-				AF492ED727C0DA3100460E95 /* 4.jpg */,
-				AF573E0A27BCBCCE00C2925C /* LaunchScreen.storyboard */,
-				AF573E0D27BCBCCE00C2925C /* Info.plist */,
+				AF34AF9B27C10F7F00962D7B /* AppDelegate.swift */,
+				AF34AF9D27C10F7F00962D7B /* art.scnassets */,
+				AF34AF9F27C10F7F00962D7B /* ViewController.swift */,
+				AF34AFA127C10F7F00962D7B /* Main.storyboard */,
+				AF34AFA427C10F8000962D7B /* Assets.xcassets */,
+				AF34AFA627C10F8000962D7B /* LaunchScreen.storyboard */,
 			);
-			path = CollectionViewT;
+			path = "AR Ruler";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF573DFB27BCBCCD00C2925C /* CollectionViewT */ = {
+		AF34AF9727C10F7F00962D7B /* AR Ruler */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF573E1027BCBCCE00C2925C /* Build configuration list for PBXNativeTarget "CollectionViewT" */;
+			buildConfigurationList = AF34AFAB27C10F8000962D7B /* Build configuration list for PBXNativeTarget "AR Ruler" */;
 			buildPhases = (
-				AF573DF827BCBCCD00C2925C /* Sources */,
-				AF573DF927BCBCCD00C2925C /* Frameworks */,
-				AF573DFA27BCBCCD00C2925C /* Resources */,
+				AF34AF9427C10F7F00962D7B /* Sources */,
+				AF34AF9527C10F7F00962D7B /* Frameworks */,
+				AF34AF9627C10F7F00962D7B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CollectionViewT;
-			productName = CollectionViewT;
-			productReference = AF573DFC27BCBCCD00C2925C /* CollectionViewT.app */;
+			name = "AR Ruler";
+			productName = "AR Ruler";
+			productReference = AF34AF9827C10F7F00962D7B /* AR Ruler.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AF573DF427BCBCCD00C2925C /* Project object */ = {
+		AF34AF9027C10F7F00962D7B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					AF573DFB27BCBCCD00C2925C = {
+					AF34AF9727C10F7F00962D7B = {
 						CreatedOnToolsVersion = 13.2;
 					};
 				};
 			};
-			buildConfigurationList = AF573DF727BCBCCD00C2925C /* Build configuration list for PBXProject "CollectionViewT" */;
+			buildConfigurationList = AF34AF9327C10F7F00962D7B /* Build configuration list for PBXProject "AR Ruler" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -125,60 +108,55 @@
 				en,
 				Base,
 			);
-			mainGroup = AF573DF327BCBCCD00C2925C;
-			productRefGroup = AF573DFD27BCBCCD00C2925C /* Products */;
+			mainGroup = AF34AF8F27C10F7F00962D7B;
+			productRefGroup = AF34AF9927C10F7F00962D7B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AF573DFB27BCBCCD00C2925C /* CollectionViewT */,
+				AF34AF9727C10F7F00962D7B /* AR Ruler */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AF573DFA27BCBCCD00C2925C /* Resources */ = {
+		AF34AF9627C10F7F00962D7B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF573E1E27BCCE0300C2925C /* 2.png in Resources */,
-				AF492ED827C0DA3100460E95 /* 4.jpg in Resources */,
-				AF573E0C27BCBCCE00C2925C /* LaunchScreen.storyboard in Resources */,
-				AF573E0927BCBCCE00C2925C /* Assets.xcassets in Resources */,
-				AF573E0727BCBCCD00C2925C /* Main.storyboard in Resources */,
-				AF573E1C27BCCE0300C2925C /* 3.png in Resources */,
-				AF573E1D27BCCE0300C2925C /* 1.png in Resources */,
+				AF34AF9E27C10F7F00962D7B /* art.scnassets in Resources */,
+				AF34AFA827C10F8000962D7B /* LaunchScreen.storyboard in Resources */,
+				AF34AFA527C10F8000962D7B /* Assets.xcassets in Resources */,
+				AF34AFA327C10F7F00962D7B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AF573DF827BCBCCD00C2925C /* Sources */ = {
+		AF34AF9427C10F7F00962D7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF573E0427BCBCCD00C2925C /* ViewController.swift in Sources */,
-				AF573E1627BCC51C00C2925C /* BannerCell.swift in Sources */,
-				AF573E0027BCBCCD00C2925C /* AppDelegate.swift in Sources */,
-				AF573E0227BCBCCD00C2925C /* SceneDelegate.swift in Sources */,
+				AF34AFA027C10F7F00962D7B /* ViewController.swift in Sources */,
+				AF34AF9C27C10F7F00962D7B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AF573E0527BCBCCD00C2925C /* Main.storyboard */ = {
+		AF34AFA127C10F7F00962D7B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF573E0627BCBCCD00C2925C /* Base */,
+				AF34AFA227C10F7F00962D7B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		AF573E0A27BCBCCE00C2925C /* LaunchScreen.storyboard */ = {
+		AF34AFA627C10F8000962D7B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF573E0B27BCBCCE00C2925C /* Base */,
+				AF34AFA727C10F8000962D7B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -186,7 +164,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AF573E0E27BCBCCE00C2925C /* Debug */ = {
+		AF34AFA927C10F8000962D7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,7 +225,7 @@
 			};
 			name = Debug;
 		};
-		AF573E0F27BCBCCE00C2925C /* Release */ = {
+		AF34AFAA27C10F8000962D7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -302,7 +280,7 @@
 			};
 			name = Release;
 		};
-		AF573E1127BCBCCE00C2925C /* Debug */ = {
+		AF34AFAC27C10F8000962D7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -311,10 +289,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CollectionViewT/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wonbeen.CollectionViewT;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wonbeen.AR-Ruler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -330,7 +310,7 @@
 			};
 			name = Debug;
 		};
-		AF573E1227BCBCCE00C2925C /* Release */ = {
+		AF34AFAD27C10F8000962D7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -339,10 +319,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CollectionViewT/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -350,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wonbeen.CollectionViewT;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wonbeen.AR-Ruler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -361,25 +343,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF573DF727BCBCCD00C2925C /* Build configuration list for PBXProject "CollectionViewT" */ = {
+		AF34AF9327C10F7F00962D7B /* Build configuration list for PBXProject "AR Ruler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF573E0E27BCBCCE00C2925C /* Debug */,
-				AF573E0F27BCBCCE00C2925C /* Release */,
+				AF34AFA927C10F8000962D7B /* Debug */,
+				AF34AFAA27C10F8000962D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF573E1027BCBCCE00C2925C /* Build configuration list for PBXNativeTarget "CollectionViewT" */ = {
+		AF34AFAB27C10F8000962D7B /* Build configuration list for PBXNativeTarget "AR Ruler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF573E1127BCBCCE00C2925C /* Debug */,
-				AF573E1227BCBCCE00C2925C /* Release */,
+				AF34AFAC27C10F8000962D7B /* Debug */,
+				AF34AFAD27C10F8000962D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AF573DF427BCBCCD00C2925C /* Project object */;
+	rootObject = AF34AF9027C10F7F00962D7B /* Project object */;
 }

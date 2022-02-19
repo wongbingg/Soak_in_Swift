@@ -18,8 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pWl-Cl-chQ">
-                                <rect key="frame" x="30" y="227" width="354" height="206"/>
+                                <rect key="frame" x="50" y="183" width="315" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Fod-Ib-VeM"/>
+                                    <constraint firstAttribute="width" constant="315" id="hF2-Ht-7Gr"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Jq4-Pf-fxR">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -28,7 +32,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCell" id="KG5-0L-hTJ" customClass="BannerCell" customModule="CollectionViewT" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="39" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="36" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CQI-h8-egb" customClass="BannerCell" customModule="CollectionViewT" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -56,10 +60,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="CEe-gB-xMV"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gMQ-0P-4Gf">
-                                <rect key="frame" x="309" y="363" width="51" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gMQ-0P-4Gf">
+                                <rect key="frame" x="50" y="354" width="302" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -68,10 +71,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pWl-Cl-chQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Bkc-iX-UTI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pWl-Cl-chQ" secondAttribute="bottom" constant="429" id="DUG-Pc-A6R"/>
-                            <constraint firstItem="pWl-Cl-chQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="183" id="P1e-Ub-47D"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pWl-Cl-chQ" secondAttribute="trailing" constant="30" id="h3z-4u-1CE"/>
+                            <constraint firstItem="pWl-Cl-chQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="139" id="3Vn-7W-PRD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pWl-Cl-chQ" secondAttribute="trailing" constant="49" id="K9X-U9-v4o"/>
+                            <constraint firstItem="pWl-Cl-chQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ZCU-ud-NWD"/>
                         </constraints>
                     </view>
                     <connections>
