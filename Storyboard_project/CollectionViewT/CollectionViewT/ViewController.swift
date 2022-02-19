@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     
+    @IBOutlet weak var bannerNumber: UILabel!
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     
     //현재페이지 체크 변수 (자동스크롤 시 필요)
@@ -36,6 +37,8 @@ class ViewController: UIViewController ,UICollectionViewDataSource, UICollection
               return UICollectionViewCell()
             }
         cell.imgView.image = dataArray[indexPath.row]
+        
+      
         return cell
     }
     
@@ -47,11 +50,12 @@ class ViewController: UIViewController ,UICollectionViewDataSource, UICollection
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         nowPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        bannerNumber.text = "\(nowPage + 1) / \(dataArray.count)"
     }
     
     //2초마다 실행되는 타이머
     func bannerTimer() {
-        let _: Timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (Timer) in
+        let _: Timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { (Timer) in
             self.bannerMove()
         }
     }
@@ -64,11 +68,13 @@ class ViewController: UIViewController ,UICollectionViewDataSource, UICollection
         //맨 처음 페이지로 돌아감
             bannerCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
             nowPage = 0
+            bannerNumber.text = "\(nowPage + 1) / \(dataArray.count)"
             return
         }
         //다음 페이지로 전환
         nowPage += 1
         bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right , animated: true)
+        bannerNumber.text = "\(nowPage + 1) / \(dataArray.count)"
     }
 
     
