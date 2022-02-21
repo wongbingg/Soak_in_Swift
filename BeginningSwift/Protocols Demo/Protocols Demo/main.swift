@@ -20,9 +20,7 @@ class Bird {
 }
 
 class Eagle: Bird, CanFly{
-  
-    
-    
+
     func soar() {
         print("The eagle glides in the air using air currents")
     }
@@ -45,5 +43,5 @@ struct Airplane: CanFly { //protocol can be addopted class, struct, not inherita
   
 }
 
-let myPlane = Airplane()
-myPlane.fly()
+
+

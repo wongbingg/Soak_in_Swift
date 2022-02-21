@@ -13,6 +13,8 @@ class ViewController: UIViewController ,UICollectionViewDataSource, UICollection
     @IBOutlet weak var bannerNumber: UILabel!
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     
+   
+    
     //현재페이지 체크 변수 (자동스크롤 시 필요)
     var nowPage: Int = 0
     
@@ -78,7 +80,11 @@ class ViewController: UIViewController ,UICollectionViewDataSource, UICollection
     }
 
     
-
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        
+    }
+    
 
 }
 

@@ -21,3 +21,5 @@ let secondMemorryAddress = Unmanaged.passUnretained(myFriend).toOpaque()
 print(anObjectMemoryAddress)
 print(secondMemorryAddress)
 
+
+

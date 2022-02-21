@@ -1,59 +1,41 @@
- 
-protocol AdvancedLifeSupport {
-    func performCPR()
+//
+//  Experiment.swift
+//  Protocols and Delegates
+//
+//  Created by 이원빈 on 2022/02/20.
+//
+
+protocol Manager {
+    func teaching()
 }
 
-class EmergencyCallHandler {
-    var delegate: AdvancedLifeSupport? //protocol 선언시점
-    
-    func assessSituation() {
-        print("Can you tell me what happened?")
+class Boss {
+    var delegate: Manager?
+    func justWorking() {
+        print("yee ~ im go~")
     }
-    
-    func medicalEmergency() {
-        delegate?.performCPR() // delegate 를 가지고있는 사람에게 연락한다?
-    }
-}
-
-struct Paramedic: AdvancedLifeSupport { //protocol 선언시점
-    
-    init(handler: EmergencyCallHandler){
-        handler.delegate = self
-    }
-    
-    func performCPR() {
-        print("The paramedic does chest compressions")
-    }
-}
-class Doctor: AdvancedLifeSupport {
-    init(handler: EmergencyCallHandler){
-        handler.delegate = self
-    }
-    func performCPR() {
-        print("The doctor does chest compression.")
-    }
-    func useStethoscope(){
-        print("listening for heart")
-        
+    func callManager() {
+        delegate?.teaching()
     }
 }
 
-class Surgeon: Doctor {
-    override func performCPR() {
-        super.performCPR()
-        print("Sings staying alive by the BeeGees")
+struct Parttimejob: Manager {
+    init(controller: Boss){
+        controller.delegate = self
     }
     
-    func useElectricDrill() {
-        print("Whirr...")
-    }
+    func teaching() {
+            print("Do better boy!")
+        }
 }
 
-let bin = EmergencyCallHandler()
-let emilio = EmergencyCallHandler()
-let angela = Paramedic(handler:emilio)
-let wong = Doctor(handler: bin)
 
-emilio.assessSituation()
-emilio.medicalEmergency()
-bin.medicalEmergency()
+
+let yellowMonkey = Boss()
+let bigGirl = Parttimejob(controller: yellowMonkey)
+
+yellowMonkey.justWorking()
+yellowMonkey.callManager()
+
+
+
