@@ -1,35 +1,38 @@
+//<4673> 셀프넘버 (1시간 40분 걸림)
 
-//<4344> 평균은 넘겠지
-
-import Foundation
-
-let C = Int(readLine()!)!
-var percentOfOverAvg:[Double] = []
-
-(0..<C).forEach { _ in
-    
-    var totalPoint = 0
-    let N = (readLine()?.split(separator: " ").map{Int($0)!})!
-    
-    (1...N[0]).forEach { i in
-        totalPoint += N[i]
+func D(n:Int) -> Int {
+    var result = 0
+    if n < 10 {
+        result = n + n
+    }else if n < 100 {
+        result = n + (n % 10) + (n / 10)
+    }else if n < 1000 {
+        result = n + (n % 10) + ((n / 10) % 10) + (n / 100)
+    }else if n < 10000{
+        result = n + (n % 10) + ((n / 10) % 10) + ((n / 100) % 10) + (n / 1000)
+    }else {
+        result = 10001
     }
-    
-    let avg = totalPoint / N[0]
-    var winnerCount = 0
-    
-    (1...N[0]).forEach { i in
-        if N[i] > avg {
-            winnerCount += 1
-        }
-    }
-    
-    let result = (Double(winnerCount) / Double(N[0])) * 100
-    let digit: Double = pow(10,3)
-    percentOfOverAvg.append(round(result * digit) / digit)
+    return result
 }
 
-for i in percentOfOverAvg{
-    print(String(format: "%.3f", i) + "%")
+var lst = Array<Int>(1...10000)
+
+for i in 1...10000{
+    let result = D(n:i)
+    if result <= 10000{
+        if let firstIndex = lst.firstIndex(of: result){
+                lst.remove(at: firstIndex)
+            }
+    }else{
+        continue
+    }
 }
+
+for j in lst {
+    print(j)
+}
+
+
+
 
