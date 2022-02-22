@@ -13,18 +13,19 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var monthLabel: UILabel!
     
+    let calendar = Calendar.current
+    var dateComponents = DateComponents()
     let dateFormatter = DateFormatter()
     var dateInfo:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        calendarView.scope = .week
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        
-        calendarView.appearance.headerDateFormat = nil//"YYYY년 MM월". headerDate가 3월 에서 4월로 넘어가는 시점을 찾아서 monthLabeL 에 업데이트 하고싶다!!
-        calendarView.appearance.titleWeekendColor = .red
+        calendarView.scope = .month // .month 로 바꿀 수 있다
+        dateFormatter.dateFormat = "yyyy-MM-dd" // 날짜별 담기는 data의 string 양식
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0 // 양쪽의 흐릿한 헤더 없애기
+        calendarView.appearance.headerDateFormat = "YYYY년 MM월" // headerDate가 3월 에서 4월로 넘어가는 시점을 찾아서 monthLabeL 에 업데이트 하고싶다!!
+        calendarView.appearance.titleWeekendColor = .red //주말날짜의 색
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -34,9 +35,29 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
        
         self.performSegue(withIdentifier: "gotoNext", sender: self)
     }
+    
+    @IBAction func moveToNext(_ sender: UIButton) {
+        self.moveCurrentPage(moveUp: true)
+        
+    }
+    
+    @IBAction func moveToPrev(_ sender: UIButton) {
+        
+        self.moveCurrentPage(moveUp: false)
+    }
+    
+    private func moveCurrentPage(moveUp: Bool) {
+        dateComponents.month = moveUp ? 1 : -1
+        calendarView.currentPage = calendar.date(byAdding: dateComponents, to: calendarView.currentPage)!
+        self.calendarView.setCurrentPage(calendarView.currentPage, animated: true)
+    }
+    
+    
+    
 //    public func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
 //        print(dateFormatter.string(from: date), "날짜가 해제 되었습니다.")
 //    }
+    
 
     // MARK: - Navigation
 
