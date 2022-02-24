@@ -23,7 +23,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="azq-rq-aWC" kind="presentation" modalPresentationStyle="fullScreen" id="GBy-k4-UoV"/>
+                                    <segue destination="azq-rq-aWC" kind="presentation" id="GBy-k4-UoV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -40,7 +40,7 @@
             <objects>
                 <viewController id="azq-rq-aWC" customClass="ViewController2" customModule="ViewControllerLifecycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Td-Py-w70">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKV-N0-f9a">

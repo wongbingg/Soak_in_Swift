@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF43DA5227C799B00019C501 /* weatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43DA5127C799B00019C501 /* weatherData.swift */; };
 		AF63CAED27BBA11E00F544D1 /* pracData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63CAEC27BBA11E00F544D1 /* pracData.swift */; };
-		AF63CAEF27BBA41000F544D1 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63CAEE27BBA41000F544D1 /* WeatherData.swift */; };
 		AFB8B32C27BA6B910032ACFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB8B32B27BA6B910032ACFF /* AppDelegate.swift */; };
 		AFB8B32E27BA6B920032ACFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB8B32D27BA6B920032ACFF /* SceneDelegate.swift */; };
 		AFB8B33027BA6B920032ACFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB8B32F27BA6B920032ACFF /* ViewController.swift */; };
@@ -22,8 +22,8 @@
 		17E8A7531252442D5ED50861 /* Pods-AlamofireT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireT.debug.xcconfig"; path = "Target Support Files/Pods-AlamofireT/Pods-AlamofireT.debug.xcconfig"; sourceTree = "<group>"; };
 		21DF1CA995342BD4CADE2A6D /* Pods_AlamofireT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5AF21A50261C00DA27852E /* Pods-AlamofireT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireT.release.xcconfig"; path = "Target Support Files/Pods-AlamofireT/Pods-AlamofireT.release.xcconfig"; sourceTree = "<group>"; };
+		AF43DA5127C799B00019C501 /* weatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherData.swift; sourceTree = "<group>"; };
 		AF63CAEC27BBA11E00F544D1 /* pracData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pracData.swift; sourceTree = "<group>"; };
-		AF63CAEE27BBA41000F544D1 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		AFB8B32827BA6B910032ACFF /* AlamofireT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamofireT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB8B32B27BA6B910032ACFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFB8B32D27BA6B920032ACFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				AF63CAEC27BBA11E00F544D1 /* pracData.swift */,
-				AF63CAEE27BBA41000F544D1 /* WeatherData.swift */,
+				AF43DA5127C799B00019C501 /* weatherData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -220,8 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF43DA5227C799B00019C501 /* weatherData.swift in Sources */,
 				AFB8B33027BA6B920032ACFF /* ViewController.swift in Sources */,
-				AF63CAEF27BBA41000F544D1 /* WeatherData.swift in Sources */,
 				AF63CAED27BBA11E00F544D1 /* pracData.swift in Sources */,
 				AFB8B32C27BA6B910032ACFF /* AppDelegate.swift in Sources */,
 				AFB8B32E27BA6B920032ACFF /* SceneDelegate.swift in Sources */,

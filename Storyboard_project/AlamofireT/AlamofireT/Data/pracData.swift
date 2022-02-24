@@ -8,7 +8,7 @@
 import Foundation
 
 struct pracData: Codable {
-    let title: String
-    let completed: Bool
+    let result: Int
+    
     
 }

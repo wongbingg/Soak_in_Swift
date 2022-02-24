@@ -21,7 +21,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        calendarView.scope = .month // .month 로 바꿀 수 있다
+        calendarView.scope = .month// .month 로 바꿀 수 있다
         dateFormatter.dateFormat = "yyyy-MM-dd" // 날짜별 담기는 data의 string 양식
         calendarView.appearance.headerMinimumDissolvedAlpha = 0.0 // 양쪽의 흐릿한 헤더 없애기
         calendarView.appearance.headerDateFormat = "YYYY년 MM월" // headerDate가 3월 에서 4월로 넘어가는 시점을 찾아서 monthLabeL 에 업데이트 하고싶다!!
