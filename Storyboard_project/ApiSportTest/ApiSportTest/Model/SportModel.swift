@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct SportModel {
     let teamId: Int
     let cityName: String
+    let date: String
+    let logoimagestring: String
+   
+    
 }

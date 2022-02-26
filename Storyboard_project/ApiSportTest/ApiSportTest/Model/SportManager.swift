@@ -18,13 +18,13 @@ protocol SportManagerDelegate {
 
 struct SportManager {
     var semaphore = DispatchSemaphore (value: 0)
-    let sportURL = "https://v3.football.api-sports.io/leagues?id="
+    let sportURL = "https://v3.football.api-sports.io/fixtures?"
     
     var delegate: SportManagerDelegate?
     
-    func getData(teamid: String) {
+    func getData(season: String, teamid: String) {
         
-        let urlString = "\(sportURL)\(teamid)"
+        let urlString = "\(sportURL)season=\(season)&team=\(teamid)"
         performRequest(with: urlString)
     }
     
@@ -42,7 +42,7 @@ struct SportManager {
             if let sport = self.parseJSON(safeData){
                 self.delegate?.didUpdateSport(self, sport: sport)
             }
-            print(String(data: safeData, encoding: .utf8))
+            //print(String(data: safeData, encoding: .utf8))
             semaphore.signal()
         }
         
@@ -56,7 +56,9 @@ struct SportManager {
             let decodedData = try decoder.decode(SportData.self, from: sportData)
             let id = decodedData.response[0].league.id
             let name = decodedData.response[0].league.name
-            let sport = SportModel(teamId: id, cityName: name)
+            let date = decodedData.response[0].fixture.date
+            let image = decodedData.response[0].league.logo
+            let sport = SportModel(teamId: id, cityName: name, date: date,logoimagestring: image)
             return sport
         } catch {
             delegate?.didFailWithError(error: error)
@@ -64,6 +66,7 @@ struct SportManager {
         }
     }
 }
+
 
 
 
