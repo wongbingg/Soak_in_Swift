@@ -9,14 +9,14 @@ import UIKit
 
 class NextVC: UIViewController {
 
-    var mymy: String?
+    var currentDate: String?
     
     @IBOutlet weak var myLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myLabel.text = mymy
+        myLabel.text = currentDate
 
         // Do any additional setup after loading the view.
     }

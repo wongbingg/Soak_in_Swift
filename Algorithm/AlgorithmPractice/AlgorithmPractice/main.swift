@@ -1,38 +1,22 @@
-//<4673> 셀프넘버 (1시간 40분 걸림)
 
-func D(n:Int) -> Int {
-    var result = 0
-    if n < 10 {
-        result = n + n
-    }else if n < 100 {
-        result = n + (n % 10) + (n / 10)
-    }else if n < 1000 {
-        result = n + (n % 10) + ((n / 10) % 10) + (n / 100)
-    }else if n < 10000{
-        result = n + (n % 10) + ((n / 10) % 10) + ((n / 100) % 10) + (n / 1000)
-    }else {
-        result = 10001
+//<1065> 한수
+
+var input = Int(readLine()!)!
+var n = 0
+
+for i in 1...input {
+    if i < 10 {
+        n += 1
+    }else if i < 100 {
+        n += 1
+    }else if i < 1000 {
+        let rightplace = i % 10
+        let middleplace = (i / 10) % 10
+        let leftplace = i / 100
+        if (rightplace - middleplace) == (middleplace - leftplace) {
+            n += 1
+        }
     }
-    return result
+
 }
-
-var lst = Array<Int>(1...10000)
-
-for i in 1...10000{
-    let result = D(n:i)
-    if result <= 10000{
-        if let firstIndex = lst.firstIndex(of: result){
-                lst.remove(at: firstIndex)
-            }
-    }else{
-        continue
-    }
-}
-
-for j in lst {
-    print(j)
-}
-
-
-
-
+print(n)
