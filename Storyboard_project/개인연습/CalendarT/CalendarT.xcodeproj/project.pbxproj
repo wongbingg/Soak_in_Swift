@@ -14,6 +14,9 @@
 		AF20579727C4CF8E00AFC6C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF20579527C4CF8E00AFC6C3 /* Main.storyboard */; };
 		AF20579927C4CF8F00AFC6C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF20579827C4CF8F00AFC6C3 /* Assets.xcassets */; };
 		AF20579C27C4CF8F00AFC6C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF20579A27C4CF8F00AFC6C3 /* LaunchScreen.storyboard */; };
+		AF4B40E127CB7F74007CCCA7 /* SportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B40E027CB7F74007CCCA7 /* SportManager.swift */; };
+		AF4B40E327CB7F7F007CCCA7 /* SportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B40E227CB7F7F007CCCA7 /* SportData.swift */; };
+		AF4B40E527CB7F8A007CCCA7 /* SportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B40E427CB7F8A007CCCA7 /* SportModel.swift */; };
 		AF8491AF27C4D9D10001F8FA /* NextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8491AE27C4D9D10001F8FA /* NextVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		AF20579827C4CF8F00AFC6C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF20579B27C4CF8F00AFC6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF20579D27C4CF8F00AFC6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF4B40E027CB7F74007CCCA7 /* SportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportManager.swift; sourceTree = "<group>"; };
+		AF4B40E227CB7F7F007CCCA7 /* SportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportData.swift; sourceTree = "<group>"; };
+		AF4B40E427CB7F8A007CCCA7 /* SportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportModel.swift; sourceTree = "<group>"; };
 		AF8491AE27C4D9D10001F8FA /* NextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextVC.swift; sourceTree = "<group>"; };
 		D12AF0D6E8E4292F2DB8F18D /* Pods_CalendarT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF50CF270A29C5CDB7ECA7C /* Pods-CalendarT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarT.debug.xcconfig"; path = "Target Support Files/Pods-CalendarT/Pods-CalendarT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 			children = (
 				AF20578F27C4CF8E00AFC6C3 /* AppDelegate.swift */,
 				AF20579127C4CF8E00AFC6C3 /* SceneDelegate.swift */,
+				AF4B40E627CB7F92007CCCA7 /* Model */,
 				AF20579327C4CF8E00AFC6C3 /* ViewController.swift */,
 				AF8491AE27C4D9D10001F8FA /* NextVC.swift */,
 				AF20579527C4CF8E00AFC6C3 /* Main.storyboard */,
@@ -92,6 +99,16 @@
 				AF20579D27C4CF8F00AFC6C3 /* Info.plist */,
 			);
 			path = CalendarT;
+			sourceTree = "<group>";
+		};
+		AF4B40E627CB7F92007CCCA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF4B40E027CB7F74007CCCA7 /* SportManager.swift */,
+				AF4B40E227CB7F7F007CCCA7 /* SportData.swift */,
+				AF4B40E427CB7F8A007CCCA7 /* SportModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +229,9 @@
 				AF20579427C4CF8E00AFC6C3 /* ViewController.swift in Sources */,
 				AF20579027C4CF8E00AFC6C3 /* AppDelegate.swift in Sources */,
 				AF20579227C4CF8E00AFC6C3 /* SceneDelegate.swift in Sources */,
+				AF4B40E127CB7F74007CCCA7 /* SportManager.swift in Sources */,
+				AF4B40E527CB7F8A007CCCA7 /* SportModel.swift in Sources */,
+				AF4B40E327CB7F7F007CCCA7 /* SportData.swift in Sources */,
 				AF8491AF27C4D9D10001F8FA /* NextVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

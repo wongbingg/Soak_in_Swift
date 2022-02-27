@@ -9,18 +9,60 @@ import UIKit
 
 class NextVC: UIViewController {
 
-    var currentDate: String?
+    @IBOutlet weak var leaguenameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var leaguelogoImage: UIImageView!
     
-    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var homeLogoImage: UIImageView!
+    @IBOutlet weak var homeTeam: UILabel!
+    
+    @IBOutlet weak var awayLogoImage: UIImageView!
+    @IBOutlet weak var awayTeam: UILabel!
+    
+    var sportManager = SportManager()
+
+    var currentDate: String? // viewcontroller 에서 받아온 date 값
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        myLabel.text = currentDate
 
-        // Do any additional setup after loading the view.
+        sportManager.delegate = self
+        sportManager.getData(season: "2021", teamid: "42", date: currentDate!)
+        
+    }
+}
+
+extension NextVC: SportManagerDelegate {
+    
+    
+    func didUpdateSport(_ sportManager: SportManager, sport: SportModel) {
+        let url = URL(string: sport.logoimagestring)
+        let url1 = URL(string: sport.homeLogo)
+        let url2 = URL(string: sport.awayLogo)
+        let data = try? Data(contentsOf: url! )
+        let data1 = try? Data(contentsOf: url1! )
+        let data2 = try? Data(contentsOf: url2! )
+        
+        DispatchQueue.main.async {
+            self.leaguenameLabel.text = sport.leagueName
+            self.leaguelogoImage.image = UIImage(data: data!)
+            
+            self.homeLogoImage.image = UIImage(data: data1!)
+            self.homeTeam.text = "\(sport.homeTeam)"
+            
+            self.awayLogoImage.image = UIImage(data: data2!)
+            self.awayTeam.text = sport.awayTeam
+            
+            self.dateLabel.text = "Date: \(sport.date)"
+           
+        }
+        
+        
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
     }
     
     
-
 }
