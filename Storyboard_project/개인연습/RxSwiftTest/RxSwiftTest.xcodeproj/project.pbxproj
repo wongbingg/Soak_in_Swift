@@ -7,119 +7,129 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF43DA3C27C762720019C501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43DA3B27C762720019C501 /* AppDelegate.swift */; };
-		AF43DA3E27C762720019C501 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43DA3D27C762720019C501 /* SceneDelegate.swift */; };
-		AF43DA4027C762720019C501 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43DA3F27C762720019C501 /* ViewController.swift */; };
-		AF43DA4327C762720019C501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF43DA4127C762720019C501 /* Main.storyboard */; };
-		AF43DA4527C762730019C501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF43DA4427C762730019C501 /* Assets.xcassets */; };
-		AF43DA4827C762730019C501 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF43DA4627C762730019C501 /* LaunchScreen.storyboard */; };
-		AF43DA5A27C7B15D0019C501 /* SportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43DA5927C7B15D0019C501 /* SportManager.swift */; };
-		AF43DA7C27C7C00C0019C501 /* SportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43DA7B27C7C00C0019C501 /* SportData.swift */; };
-		AF43DA7E27C7C2330019C501 /* SportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43DA7D27C7C2330019C501 /* SportModel.swift */; };
+		AFF582E027CE415200F7CEA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582DF27CE415200F7CEA7 /* AppDelegate.swift */; };
+		AFF582E227CE415200F7CEA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582E127CE415200F7CEA7 /* SceneDelegate.swift */; };
+		AFF582E427CE415200F7CEA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582E327CE415200F7CEA7 /* ViewController.swift */; };
+		AFF582E727CE415200F7CEA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF582E527CE415200F7CEA7 /* Main.storyboard */; };
+		AFF582E927CE415400F7CEA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFF582E827CE415400F7CEA7 /* Assets.xcassets */; };
+		AFF582EC27CE415400F7CEA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF582EA27CE415400F7CEA7 /* LaunchScreen.storyboard */; };
+		E206FF27C9FFEEA238438567 /* Pods_RxSwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7BCB57FC270585E81BC7CE /* Pods_RxSwiftTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AF43DA3827C762720019C501 /* ApiSportTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiSportTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF43DA3B27C762720019C501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF43DA3D27C762720019C501 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF43DA3F27C762720019C501 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF43DA4227C762720019C501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AF43DA4427C762730019C501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF43DA4727C762730019C501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AF43DA4927C762730019C501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF43DA5927C7B15D0019C501 /* SportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportManager.swift; sourceTree = "<group>"; };
-		AF43DA7B27C7C00C0019C501 /* SportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportData.swift; sourceTree = "<group>"; };
-		AF43DA7D27C7C2330019C501 /* SportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportModel.swift; sourceTree = "<group>"; };
+		3D7BCB57FC270585E81BC7CE /* Pods_RxSwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFF582DC27CE415200F7CEA7 /* RxSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFF582DF27CE415200F7CEA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AFF582E127CE415200F7CEA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AFF582E327CE415200F7CEA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AFF582E627CE415200F7CEA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AFF582E827CE415400F7CEA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFF582EB27CE415400F7CEA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AFF582ED27CE415400F7CEA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B882864B2DA771803855CBC1 /* Pods-RxSwiftTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTest.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftTest/Pods-RxSwiftTest.debug.xcconfig"; sourceTree = "<group>"; };
+		E3F75E18BC41C1BBC148D98E /* Pods-RxSwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTest.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftTest/Pods-RxSwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AF43DA3527C762720019C501 /* Frameworks */ = {
+		AFF582D927CE415200F7CEA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E206FF27C9FFEEA238438567 /* Pods_RxSwiftTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AF43DA2F27C762720019C501 = {
+		279E71D2273001158E456260 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AF43DA3A27C762720019C501 /* ApiSportTest */,
-				AF43DA3927C762720019C501 /* Products */,
+				B882864B2DA771803855CBC1 /* Pods-RxSwiftTest.debug.xcconfig */,
+				E3F75E18BC41C1BBC148D98E /* Pods-RxSwiftTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		587AC96F4B2921F8C5FBC683 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D7BCB57FC270585E81BC7CE /* Pods_RxSwiftTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFF582D327CE415200F7CEA7 = {
+			isa = PBXGroup;
+			children = (
+				AFF582DE27CE415200F7CEA7 /* RxSwiftTest */,
+				AFF582DD27CE415200F7CEA7 /* Products */,
+				279E71D2273001158E456260 /* Pods */,
+				587AC96F4B2921F8C5FBC683 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		AF43DA3927C762720019C501 /* Products */ = {
+		AFF582DD27CE415200F7CEA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF43DA3827C762720019C501 /* ApiSportTest.app */,
+				AFF582DC27CE415200F7CEA7 /* RxSwiftTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF43DA3A27C762720019C501 /* ApiSportTest */ = {
+		AFF582DE27CE415200F7CEA7 /* RxSwiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				AF43DA3B27C762720019C501 /* AppDelegate.swift */,
-				AF43DA3D27C762720019C501 /* SceneDelegate.swift */,
-				AF43DA7F27C7C7D20019C501 /* Model */,
-				AF43DA3F27C762720019C501 /* ViewController.swift */,
-				AF43DA4127C762720019C501 /* Main.storyboard */,
-				AF43DA4427C762730019C501 /* Assets.xcassets */,
-				AF43DA4627C762730019C501 /* LaunchScreen.storyboard */,
-				AF43DA4927C762730019C501 /* Info.plist */,
+				AFF582DF27CE415200F7CEA7 /* AppDelegate.swift */,
+				AFF582E127CE415200F7CEA7 /* SceneDelegate.swift */,
+				AFF582E327CE415200F7CEA7 /* ViewController.swift */,
+				AFF582E527CE415200F7CEA7 /* Main.storyboard */,
+				AFF582E827CE415400F7CEA7 /* Assets.xcassets */,
+				AFF582EA27CE415400F7CEA7 /* LaunchScreen.storyboard */,
+				AFF582ED27CE415400F7CEA7 /* Info.plist */,
 			);
-			path = ApiSportTest;
-			sourceTree = "<group>";
-		};
-		AF43DA7F27C7C7D20019C501 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				AF43DA5927C7B15D0019C501 /* SportManager.swift */,
-				AF43DA7B27C7C00C0019C501 /* SportData.swift */,
-				AF43DA7D27C7C2330019C501 /* SportModel.swift */,
-			);
-			path = Model;
+			path = RxSwiftTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF43DA3727C762720019C501 /* ApiSportTest */ = {
+		AFF582DB27CE415200F7CEA7 /* RxSwiftTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF43DA4C27C762730019C501 /* Build configuration list for PBXNativeTarget "ApiSportTest" */;
+			buildConfigurationList = AFF582F027CE415400F7CEA7 /* Build configuration list for PBXNativeTarget "RxSwiftTest" */;
 			buildPhases = (
-				AF43DA3427C762720019C501 /* Sources */,
-				AF43DA3527C762720019C501 /* Frameworks */,
-				AF43DA3627C762720019C501 /* Resources */,
+				5B4697FAB63656E006E83201 /* [CP] Check Pods Manifest.lock */,
+				AFF582D827CE415200F7CEA7 /* Sources */,
+				AFF582D927CE415200F7CEA7 /* Frameworks */,
+				AFF582DA27CE415200F7CEA7 /* Resources */,
+				C387261D8425AE8CEAF262D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ApiSportTest;
-			productName = ApiSportTest;
-			productReference = AF43DA3827C762720019C501 /* ApiSportTest.app */;
+			name = RxSwiftTest;
+			productName = RxSwiftTest;
+			productReference = AFF582DC27CE415200F7CEA7 /* RxSwiftTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AF43DA3027C762720019C501 /* Project object */ = {
+		AFF582D427CE415200F7CEA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					AF43DA3727C762720019C501 = {
+					AFF582DB27CE415200F7CEA7 = {
 						CreatedOnToolsVersion = 13.2;
 					};
 				};
 			};
-			buildConfigurationList = AF43DA3327C762720019C501 /* Build configuration list for PBXProject "ApiSportTest" */;
+			buildConfigurationList = AFF582D727CE415200F7CEA7 /* Build configuration list for PBXProject "RxSwiftTest" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,58 +137,97 @@
 				en,
 				Base,
 			);
-			mainGroup = AF43DA2F27C762720019C501;
-			productRefGroup = AF43DA3927C762720019C501 /* Products */;
+			mainGroup = AFF582D327CE415200F7CEA7;
+			productRefGroup = AFF582DD27CE415200F7CEA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AF43DA3727C762720019C501 /* ApiSportTest */,
+				AFF582DB27CE415200F7CEA7 /* RxSwiftTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AF43DA3627C762720019C501 /* Resources */ = {
+		AFF582DA27CE415200F7CEA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF43DA4827C762730019C501 /* LaunchScreen.storyboard in Resources */,
-				AF43DA4527C762730019C501 /* Assets.xcassets in Resources */,
-				AF43DA4327C762720019C501 /* Main.storyboard in Resources */,
+				AFF582EC27CE415400F7CEA7 /* LaunchScreen.storyboard in Resources */,
+				AFF582E927CE415400F7CEA7 /* Assets.xcassets in Resources */,
+				AFF582E727CE415200F7CEA7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B4697FAB63656E006E83201 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxSwiftTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C387261D8425AE8CEAF262D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftTest/Pods-RxSwiftTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftTest/Pods-RxSwiftTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwiftTest/Pods-RxSwiftTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		AF43DA3427C762720019C501 /* Sources */ = {
+		AFF582D827CE415200F7CEA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF43DA7E27C7C2330019C501 /* SportModel.swift in Sources */,
-				AF43DA7C27C7C00C0019C501 /* SportData.swift in Sources */,
-				AF43DA4027C762720019C501 /* ViewController.swift in Sources */,
-				AF43DA3C27C762720019C501 /* AppDelegate.swift in Sources */,
-				AF43DA3E27C762720019C501 /* SceneDelegate.swift in Sources */,
-				AF43DA5A27C7B15D0019C501 /* SportManager.swift in Sources */,
+				AFF582E427CE415200F7CEA7 /* ViewController.swift in Sources */,
+				AFF582E027CE415200F7CEA7 /* AppDelegate.swift in Sources */,
+				AFF582E227CE415200F7CEA7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AF43DA4127C762720019C501 /* Main.storyboard */ = {
+		AFF582E527CE415200F7CEA7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF43DA4227C762720019C501 /* Base */,
+				AFF582E627CE415200F7CEA7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		AF43DA4627C762730019C501 /* LaunchScreen.storyboard */ = {
+		AFF582EA27CE415400F7CEA7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF43DA4727C762730019C501 /* Base */,
+				AFF582EB27CE415400F7CEA7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -186,7 +235,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AF43DA4A27C762730019C501 /* Debug */ = {
+		AFF582EE27CE415400F7CEA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,7 +296,7 @@
 			};
 			name = Debug;
 		};
-		AF43DA4B27C762730019C501 /* Release */ = {
+		AFF582EF27CE415400F7CEA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -302,8 +351,9 @@
 			};
 			name = Release;
 		};
-		AF43DA4D27C762730019C501 /* Debug */ = {
+		AFF582F127CE415400F7CEA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B882864B2DA771803855CBC1 /* Pods-RxSwiftTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,7 +361,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ApiSportTest/Info.plist;
+				INFOPLIST_FILE = RxSwiftTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,7 +372,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wonbeen.ApiSportTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wonbeen.RxSwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -330,8 +380,9 @@
 			};
 			name = Debug;
 		};
-		AF43DA4E27C762730019C501 /* Release */ = {
+		AFF582F227CE415400F7CEA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3F75E18BC41C1BBC148D98E /* Pods-RxSwiftTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -339,7 +390,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ApiSportTest/Info.plist;
+				INFOPLIST_FILE = RxSwiftTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -350,7 +401,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wonbeen.ApiSportTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wonbeen.RxSwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -361,25 +412,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF43DA3327C762720019C501 /* Build configuration list for PBXProject "ApiSportTest" */ = {
+		AFF582D727CE415200F7CEA7 /* Build configuration list for PBXProject "RxSwiftTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF43DA4A27C762730019C501 /* Debug */,
-				AF43DA4B27C762730019C501 /* Release */,
+				AFF582EE27CE415400F7CEA7 /* Debug */,
+				AFF582EF27CE415400F7CEA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF43DA4C27C762730019C501 /* Build configuration list for PBXNativeTarget "ApiSportTest" */ = {
+		AFF582F027CE415400F7CEA7 /* Build configuration list for PBXNativeTarget "RxSwiftTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF43DA4D27C762730019C501 /* Debug */,
-				AF43DA4E27C762730019C501 /* Release */,
+				AFF582F127CE415400F7CEA7 /* Debug */,
+				AFF582F227CE415400F7CEA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AF43DA3027C762720019C501 /* Project object */;
+	rootObject = AFF582D427CE415200F7CEA7 /* Project object */;
 }
