@@ -1,14 +1,15 @@
-Udemy iOS lecture
+Swift
 ==
 
 ## BeginningSwift
 -basic *grammar*
 
 ## Storyboard_project
--clone *project*
+-개인연습
+-Udemyclone *project*
 
 ## SwiftUI_project
--clone *project*
+-Udemyclone *project*
 
 ## Algorithm
 -baekjoon *algorithm* practice

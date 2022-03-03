@@ -29,7 +29,7 @@ class ViewController: UIViewController {
             .subscribe(onNext: {image in
                 self.imageView.image = image
             })
-            .disposed(by: disposeBag)*/ //사진불러오기
+            .disposed(by: disposeBag) //사진불러오기
         //MARK: - Observable(sequence)생성
         example(of: "just, of, from") {
             
@@ -119,7 +119,109 @@ class ViewController: UIViewController {
             )
         }
         
+        
         //MARK: - Disposing
+        example(of: "dispose") {
+            let observable = Observable.of("A","B","C")
+            let subscription = observable.subscribe( {event in
+                print(event)
+            })
+            subscription.dispose()
+        }
+        
+        example(of: "DisposeBag") {
+            let disposeBag = DisposeBag()
+            
+            Observable.of("A","B","C")
+                .subscribe{
+                    print($0)
+                }
+                .disposed(by: disposeBag)
+            print(disposeBag)
+        }
+        
+        enum MyError: Error {
+            case anError
+        }
+        example(of: "create") {
+            let disposeBag = DisposeBag()
+            
+            Observable<String>.create({ (observer) -> Disposable in
+                observer.onNext("1")
+                
+                observer.onError(MyError.anError)
+                
+                observer.onCompleted()
+                
+                observer.onNext("?")
+                
+                return Disposables.create()
+            })
+                .subscribe(
+                    onNext: {print($0)},
+                    onError: {print($0)},
+                    onCompleted: {print("Completed")},
+                    onDisposed: {print("Disposed")}
+                ).disposed(by: disposeBag)  // 이 구문이 있는 이유: 메모리 제거함으로써 메모리 효율 확보
+        }
+        
+        example(of: "deferred") {
+            let disposeBag = DisposeBag()
+            
+            var flip = false
+            
+            let factory: Observable<Int> = Observable.deferred() {
+                
+                flip = !flip
+                
+                if flip {
+                    return Observable.of(1,2,3)
+                } else {
+                    return Observable.of(4,5,6)
+                }
+            }
+            
+            for _ in 0...3 {
+                factory.subscribe(onNext: {
+                    print($0, terminator: "")
+                })
+                    .disposed(by: disposeBag)
+                
+                print()
+            }
+        }
+        
+        //MARK: - Traits
+        example(of: "Single") {
+            let disposeBag = DisposeBag()
+            
+            enum FileReadError: Error {
+                case fileNotFound, unreadable, encodingFailed
+            }
+            
+            func loadText(from name: String) -> Single<String> {
+                return Single.create{ single in
+                    let disposable = Disposable.create()
+                    guard let path = Bundle.main.path(forResource: name, ofType: "txt") else {
+                        single(.error(FileReadError.fileNotFound))
+                        return disposable
+                    }
+                    
+                    guard let data = FileManager.default.contents(atPath: path) else {
+                        single(.error(FileReadError.unreadable))
+                        return disposable
+                    }
+                    
+                    guard let contents = String(data: data, encoding: .utf8) else {
+                        single(.error(FileReadError.encodingFailed))
+                        return disposable
+                    }
+                    
+                    single(.success(contents))
+                    return disposable
+                }
+            }
+        }
 
     }
     
@@ -128,7 +230,7 @@ class ViewController: UIViewController {
                         action: () -> Void) {
         print("\n--- Example of:", description, "---")
         action()
-    }
+    }*/
 
 }
 
