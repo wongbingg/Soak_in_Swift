@@ -11,13 +11,15 @@ import FSCalendar
 class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance ,SportManagerDelegate{
     
     @IBOutlet weak var calendarView: FSCalendar!
-    @IBOutlet weak var monthLabel: UILabel!
+    
+    @IBOutlet weak var choiceTeam: UIPickerView!
     
     
     var sportManager = SportManager() //test
     
-    
-    
+    var teamId:String = "42"
+    let teamList = ["Arsenal","Brentford","Chelsea"]
+    let teamDiction = ["Arsnal":"42","Brentford":"55","Chelsea":"49"]
     let calendar = Calendar.current
     var dateComponents = DateComponents()
     let dateFormatter = DateFormatter()
@@ -27,7 +29,9 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         sportManager.delegate = self
-        sportManager.getData(season: "2021", teamid: "42", date: nil)
+        sportManager.getData(season: "2021", teamid: teamId, date: nil)
+        choiceTeam.dataSource = self
+        choiceTeam.delegate = self
         setUpDesign()
         
     }
@@ -100,6 +104,32 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         }
         
     }
+    
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return teamList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedTeam = teamList[row]
+        teamId = teamDiction[selectedTeam]!
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    
     
 }
 

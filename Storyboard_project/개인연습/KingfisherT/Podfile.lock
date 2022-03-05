@@ -1,20 +1,16 @@
 PODS:
-  - FSCalendar (2.8.2)
   - Kingfisher (7.2.0)
 
 DEPENDENCIES:
-  - FSCalendar
   - Kingfisher (~> 7.0)
 
 SPEC REPOS:
   trunk:
-    - FSCalendar
     - Kingfisher
 
 SPEC CHECKSUMS:
-  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
 
-PODFILE CHECKSUM: e1f235935317c692fd310a9429de0f63e2773d91
+PODFILE CHECKSUM: 3e7168f6ae6db0535ad46c75caa0736d4760f2e8
 
 COCOAPODS: 1.11.2

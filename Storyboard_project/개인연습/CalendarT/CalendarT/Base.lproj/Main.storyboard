@@ -17,11 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VyZ-SK-oh7" customClass="FSCalendar">
-                                <rect key="frame" x="20" y="156" width="374" height="564"/>
+                                <rect key="frame" x="20" y="44" width="374" height="564"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
                                         <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                        <color key="value" systemColor="systemPinkColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -30,7 +33,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIE-mi-mCG">
-                                <rect key="frame" x="101" y="170" width="35" height="35"/>
+                                <rect key="frame" x="110" y="59" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="&lt;"/>
@@ -39,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53v-mk-otW">
-                                <rect key="frame" x="278" y="170" width="35" height="35"/>
+                                <rect key="frame" x="270" y="59" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="&gt;"/>
@@ -47,18 +50,28 @@
                                     <action selector="moveToNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNQ-aq-V5o"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-yA-KUF">
+                                <rect key="frame" x="20" y="629" width="374" height="120"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnp-En-sb9">
+                                <rect key="frame" x="157" y="780" width="101" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonConfiguration key="configuration" style="plain" title="View"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VyZ-SK-oh7" secondAttribute="trailing" constant="20" id="FuR-9I-zuc"/>
-                            <constraint firstItem="VyZ-SK-oh7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="112" id="H2A-ew-LTR"/>
-                            <constraint firstItem="VyZ-SK-oh7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ozb-hF-N8v"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VyZ-SK-oh7" secondAttribute="bottom" constant="142" id="ThJ-Ie-FiR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VyZ-SK-oh7" secondAttribute="trailing" constant="20" id="FD5-Cp-osG"/>
+                            <constraint firstItem="VyZ-SK-oh7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FEy-3F-EyZ"/>
+                            <constraint firstItem="VyZ-SK-oh7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Jyk-jK-oix"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VyZ-SK-oh7" secondAttribute="bottom" constant="254" id="NbE-UW-jWY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="VyZ-SK-oh7" id="3Ik-Km-aZD"/>
+                        <outlet property="choiceTeam" destination="UKC-yA-KUF" id="CFy-XK-LUf"/>
                         <segue destination="Pvb-VR-UDh" kind="presentation" identifier="gotoNext" id="wN2-uK-DY5"/>
                     </connections>
                 </viewController>
@@ -159,6 +172,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

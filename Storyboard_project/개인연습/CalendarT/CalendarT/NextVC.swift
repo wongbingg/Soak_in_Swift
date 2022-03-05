@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NextVC: UIViewController {
 
@@ -39,30 +40,22 @@ extension NextVC: SportManagerDelegate {
         let url = URL(string: sport.logoimagestring)
         let url1 = URL(string: sport.homeLogo)
         let url2 = URL(string: sport.awayLogo)
-        let data = try? Data(contentsOf: url! )
-        let data1 = try? Data(contentsOf: url1! )
-        let data2 = try? Data(contentsOf: url2! )
-        
+
         DispatchQueue.main.async {
+            
+            self.leaguelogoImage.kf.setImage(with:url)
             self.leaguenameLabel.text = sport.leagueName
-            self.leaguelogoImage.image = UIImage(data: data!)
-            
-            self.homeLogoImage.image = UIImage(data: data1!)
+            self.homeLogoImage.kf.setImage(with:url1)
             self.homeTeam.text = "\(sport.homeTeam)"
-            
-            self.awayLogoImage.image = UIImage(data: data2!)
+            self.awayLogoImage.kf.setImage(with:url2)
             self.awayTeam.text = sport.awayTeam
             
             self.dateLabel.text = "Date: \(sport.date)"
            
         }
-        
-        
     }
     
     func didFailWithError(error: Error) {
         print(error)
     }
-    
-    
 }
