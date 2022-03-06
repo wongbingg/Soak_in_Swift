@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class NextVC: UIViewController {
-
+    
     @IBOutlet weak var leaguenameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var leaguelogoImage: UIImageView!
@@ -20,43 +20,53 @@ class NextVC: UIViewController {
     @IBOutlet weak var awayLogoImage: UIImageView!
     @IBOutlet weak var awayTeam: UILabel!
     
-    var sportManager = SportManager()
-
-    var currentDate: String? // viewcontroller 에서 받아온 date 값
-    var currentTeamId: String? // viewcontroller 에서 받아온 teamId 값
+    
+    // viewcontroller 에서 받아온  값
+    
+    var currentDate: String?
+    var currentTeamId: String?
+    
+    var events = [Date]()
+    var leagueName = [String]()
+    var logoimagestring = [String]()
+    var homeLogo = [String]()
+    var hometeam = [String]()
+    var awayLogo = [String]()
+    var awayteam = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        sportManager.delegate = self
-        sportManager.getData(season: "2021", teamid: currentTeamId!, date: currentDate!)
         
-    }
-}
-
-extension NextVC: SportManagerDelegate {
-    
-    
-    func didUpdateSport(_ sportManager: SportManager, sport: SportModel) {
-        let url = URL(string: sport.logoimagestring)
-        let url1 = URL(string: sport.homeLogo)
-        let url2 = URL(string: sport.awayLogo)
-
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let currentDateDateType = dateFormatter.date(from: currentDate!)
+        let idx = (events.firstIndex(of: currentDateDateType!))! // currentDate가 datelist안에서 해당하는 index값을 구한다
+        // 그 index 값을 기준으로 데이터를 뽑아낸다
+        
+        let url = URL(string: logoimagestring[idx])
+        let url1 = URL(string: homeLogo[idx])
+        let url2 = URL(string: awayLogo[idx])
+        
         DispatchQueue.main.async {
             
             self.leaguelogoImage.kf.setImage(with:url)
-            self.leaguenameLabel.text = sport.leagueName
+            self.leaguenameLabel.text = self.leagueName[idx]
             self.homeLogoImage.kf.setImage(with:url1)
-            self.homeTeam.text = "\(sport.homeTeam)"
+            self.homeTeam.text = "\(self.hometeam[idx])"
             self.awayLogoImage.kf.setImage(with:url2)
-            self.awayTeam.text = sport.awayTeam
+            self.awayTeam.text = self.awayteam[idx]
+            self.dateLabel.text = "Date: \(self.events[idx])"
             
-            self.dateLabel.text = "Date: \(sport.date)"
-           
         }
+        
     }
     
-    func didFailWithError(error: Error) {
-        print(error)
-    }
+    
+    
+    
+    
+    
+    
+    
 }

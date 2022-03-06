@@ -24,7 +24,15 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     var dateComponents = DateComponents()
     let dateFormatter = DateFormatter()
     var dateInfo:String?
+    
     var events = [Date]()
+    var leagueName = [String]()
+    var logoimagestring = [String]()
+    var homeLogo = [String]()
+    var homeTeam = [String]()
+    var awayLogo = [String]()
+    var awayTeam = [String]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +56,12 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     func didUpdateSport(_ sportManager: SportManager, sport: SportModel) {
         DispatchQueue.main.async {
             self.events = sport.datelist
+            self.leagueName = sport.leagueName
+            self.logoimagestring = sport.logoimagestring
+            self.homeLogo = sport.homeLogo
+            self.homeTeam = sport.homeTeam
+            self.awayLogo = sport.awayLogo
+            self.awayTeam = sport.awayTeam
         }
     }
     
@@ -55,15 +69,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print(error)
     }
    
-//MARK: - 캘린더의 날짜 클릭 시 Action
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
-        dateInfo = dateFormatter.string(from: date)
-        print(dateInfo! , "날짜가 선택 되었습니다.") // dateInfo 값을 기준으로 경기일정 전반내용 을 출력하는 것이 목적!!
-        if events.contains(date) {
-            self.performSegue(withIdentifier: "gotoNext", sender: self)
-        }
-    }
+
     
     
 //MARK: - 캘린더의 event도트 표시
@@ -93,7 +99,18 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
 
     
-    
+    //MARK: - 캘린더의 날짜 클릭 시 Action
+        func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+            
+            dateInfo = dateFormatter.string(from: date)
+            print(dateInfo! , "날짜가 선택 되었습니다.") // dateInfo 값을 기준으로 경기일정 전반내용 을 출력하는 것이 목적!!
+            if events.contains(date) {
+                self.performSegue(withIdentifier: "gotoNext", sender: self)
+                print("다음화면으로 넘어갑니다.")
+                
+            }
+            
+        }
     // MARK: - Navigation
     
     
@@ -102,8 +119,14 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             let destinationVC = segue.destination as! NextVC
             destinationVC.currentDate = dateInfo
             destinationVC.currentTeamId = teamId
-//            print(dateInfo)
-//            print(teamId)
+            destinationVC.leagueName = leagueName
+            destinationVC.logoimagestring = logoimagestring
+            destinationVC.hometeam = homeTeam
+            destinationVC.homeLogo = homeLogo
+            destinationVC.awayteam = awayTeam
+            destinationVC.awayLogo = awayLogo
+            destinationVC.events = events
+            
         }
         
     }
@@ -130,7 +153,8 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let selectedTeam = self.teamList[row]
         print(selectedTeam)
         teamId = teamDiction[selectedTeam]!
-        sportManager.getData(season: "2021", teamid: teamId, date: nil)
+        sportManager.getData(season: "2021", teamid: teamId)
+        
     }
 }
 

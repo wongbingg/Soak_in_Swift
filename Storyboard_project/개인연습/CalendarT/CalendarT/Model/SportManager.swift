@@ -22,13 +22,8 @@ struct SportManager {
     
     var delegate: SportManagerDelegate?
     
-    func getData(season: String, teamid: String, date: String?) {
-        var urlString:String = ""
-        if date == nil {
-            urlString = "\(sportURL)season=\(season)&team=\(teamid)"
-        }else{
-            urlString = "\(sportURL)season=\(season)&team=\(teamid)&date=" + date!
-        }
+    func getData(season: String, teamid: String) {
+        let urlString = "\(sportURL)season=\(season)&team=\(teamid)"
         performRequest(with: urlString)
     }
     
@@ -64,31 +59,38 @@ struct SportManager {
             var dateComponents = DateComponents() //?
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
-            var datelists:[Date]=[]
+            
+            var leagueNameList:[String] = []
+            var logoimagestringList:[String] = []
+            var homeLogoList:[String] = []
+            var homeTeamList:[String] = []
+            var awayLogoList:[String] = []
+            var awayTeamList:[String] = []
+            
+            var dateList:[Date]=[]
+            
             
             for i in 0..<decodedData.response.count {
+                
                 if let datesubstring = subT(decodedData.response[i].fixture.date,0,10) {
                     if let dateDate = dateFormatter.date(from:String(datesubstring)) {
-                        datelists.append(dateDate)
+                        dateList.append(dateDate)
                     }else {
                         print("dateDate is nil")
                     }
                 }else{
                     print("subT is nil!")
                 }
+                
+                leagueNameList.append(decodedData.response[i].league.name)
+                logoimagestringList.append(decodedData.response[i].league.logo)
+                homeLogoList.append(decodedData.response[i].teams.home.logo)
+                homeTeamList.append(decodedData.response[i].teams.home.name)
+                awayLogoList.append(decodedData.response[i].teams.away.logo)
+                awayTeamList.append(decodedData.response[i].teams.away.name)
             }
-            
-            // 특정 날짜 선택 시, 그 날짜의 datelists에서의 인덱스 값이 i 면 response[i] 를 기준으로 한 값읽기
-            // 호출을 한번 더 하지 않고 쓸 수 있나?
-            let name = decodedData.response[0].league.name
-            let date = subT(decodedData.response[0].fixture.date,0,10)
-            let image = decodedData.response[0].league.logo
-            let homeL = decodedData.response[0].teams.home.logo
-            let homeT = decodedData.response[0].teams.home.name
-            let awayL = decodedData.response[0].teams.away.logo
-            let awayT = decodedData.response[0].teams.away.name
-            
-            let sport = SportModel(leagueName: name, date: date!,logoimagestring: image, homeLogo: homeL, homeTeam: homeT, awayLogo: awayL, awayTeam: awayT, datelist: datelists)
+
+            let sport = SportModel(leagueName: leagueNameList, logoimagestring: logoimagestringList, homeLogo: homeLogoList, homeTeam: homeTeamList, awayLogo: awayLogoList, awayTeam: awayTeamList, datelist: dateList)
             return sport
         } catch {
             delegate?.didFailWithError(error: error)
