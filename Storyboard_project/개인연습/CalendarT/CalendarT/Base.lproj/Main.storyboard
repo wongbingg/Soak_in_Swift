@@ -24,7 +24,7 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
-                                        <color key="value" systemColor="systemPinkColor"/>
+                                        <color key="value" red="0.9954913259" green="0.3993457258" blue="0.76822882889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -51,14 +51,9 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-yA-KUF">
-                                <rect key="frame" x="20" y="629" width="374" height="120"/>
+                                <rect key="frame" x="20" y="655" width="374" height="120"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnp-En-sb9">
-                                <rect key="frame" x="157" y="780" width="101" height="34.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="plain" title="View"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,7 +66,7 @@
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="VyZ-SK-oh7" id="3Ik-Km-aZD"/>
-                        <outlet property="choiceTeam" destination="UKC-yA-KUF" id="CFy-XK-LUf"/>
+                        <outlet property="choiceTeam" destination="UKC-yA-KUF" id="HX9-fF-Y1Q"/>
                         <segue destination="Pvb-VR-UDh" kind="presentation" identifier="gotoNext" id="wN2-uK-DY5"/>
                     </connections>
                 </viewController>
@@ -172,9 +167,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

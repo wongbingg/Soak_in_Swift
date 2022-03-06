@@ -57,6 +57,7 @@ struct SportManager {
     func parseJSON(_ sportData: Data) -> SportModel? {
         let decoder = JSONDecoder()
         do{
+            
             // calendar도트 추가 할 date 값만 빼오기
             let decodedData = try decoder.decode(SportData.self, from: sportData)
             
@@ -64,6 +65,7 @@ struct SportManager {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             var datelists:[Date]=[]
+            
             for i in 0..<decodedData.response.count {
                 if let datesubstring = subT(decodedData.response[i].fixture.date,0,10) {
                     if let dateDate = dateFormatter.date(from:String(datesubstring)) {
@@ -75,7 +77,9 @@ struct SportManager {
                     print("subT is nil!")
                 }
             }
-
+            
+            // 특정 날짜 선택 시, 그 날짜의 datelists에서의 인덱스 값이 i 면 response[i] 를 기준으로 한 값읽기
+            // 호출을 한번 더 하지 않고 쓸 수 있나?
             let name = decodedData.response[0].league.name
             let date = subT(decodedData.response[0].fixture.date,0,10)
             let image = decodedData.response[0].league.logo
@@ -92,6 +96,8 @@ struct SportManager {
         }
     }
     
+    
+    //문자열 슬라이싱
     func subT(_ text: String ,_ num1:Int, _ num2:Int) -> Substring? {
         
         let sub = text[text.index(text.startIndex, offsetBy: num1)..<text.index(text.startIndex,offsetBy: num2)]

@@ -11,15 +11,15 @@ import FSCalendar
 class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance ,SportManagerDelegate{
     
     @IBOutlet weak var calendarView: FSCalendar!
-    
     @IBOutlet weak var choiceTeam: UIPickerView!
     
     
     var sportManager = SportManager() //test
     
-    var teamId:String = "42"
+    var teamId:String = ""
     let teamList = ["Arsenal","Brentford","Chelsea"]
-    let teamDiction = ["Arsnal":"42","Brentford":"55","Chelsea":"49"]
+    let teamDiction = ["Arsenal":"42","Brentford":"55","Chelsea":"49"]
+    
     let calendar = Calendar.current
     var dateComponents = DateComponents()
     let dateFormatter = DateFormatter()
@@ -29,7 +29,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         sportManager.delegate = self
-        sportManager.getData(season: "2021", teamid: teamId, date: nil)
+       
         choiceTeam.dataSource = self
         choiceTeam.delegate = self
         setUpDesign()
@@ -101,35 +101,36 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         if segue.identifier == "gotoNext" {
             let destinationVC = segue.destination as! NextVC
             destinationVC.currentDate = dateInfo
+            destinationVC.currentTeamId = teamId
+//            print(dateInfo)
+//            print(teamId)
         }
         
     }
     
 }
-
+  // MARK: - UIPickerView
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        return teamList[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedTeam = teamList[row]
-        teamId = teamDiction[selectedTeam]!
-        
-    }
-    
+
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 3
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        print(row)
+        return teamList[row]
+    }
     
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedTeam = self.teamList[row]
+        print(selectedTeam)
+        teamId = teamDiction[selectedTeam]!
+        sportManager.getData(season: "2021", teamid: teamId, date: nil)
+    }
 }
 

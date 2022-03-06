@@ -23,12 +23,13 @@ class NextVC: UIViewController {
     var sportManager = SportManager()
 
     var currentDate: String? // viewcontroller 에서 받아온 date 값
+    var currentTeamId: String? // viewcontroller 에서 받아온 teamId 값
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         sportManager.delegate = self
-        sportManager.getData(season: "2021", teamid: "42", date: currentDate!)
+        sportManager.getData(season: "2021", teamid: currentTeamId!, date: currentDate!)
         
     }
 }
