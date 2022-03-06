@@ -29,9 +29,9 @@ struct SportManager {
     
     func performRequest(with urlString: String) {
         var request = URLRequest(url: URL(string: urlString)! ,timeoutInterval: Double.infinity)
-        request.addValue("910c37943cee9a4596b6186c6782bfb7", forHTTPHeaderField: "x-rapidapi-key")
-        request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
-        request.httpMethod = "GET"
+            request.addValue("910c37943cee9a4596b6186c6782bfb7", forHTTPHeaderField: "x-rapidapi-key")
+            request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
+            request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let safeData = data else {
                 print(String(describing: error))

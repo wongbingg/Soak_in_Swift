@@ -25,6 +25,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     let dateFormatter = DateFormatter()
     var dateInfo:String?
     
+    //  getData()에서 받아온 값들을 저장해주고,
     var events = [Date]()
     var leagueName = [String]()
     var logoimagestring = [String]()
@@ -32,12 +33,11 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     var homeTeam = [String]()
     var awayLogo = [String]()
     var awayTeam = [String]()
-
+    //  NextVC로 그대로 넘겨준다
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sportManager.delegate = self
-       
         choiceTeam.dataSource = self
         choiceTeam.delegate = self
         setUpDesign()
@@ -47,7 +47,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     func setUpDesign() {
         
         calendarView.scope = .month
-        dateFormatter.dateFormat = "yyyy-MM-dd" 
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         calendarView.appearance.headerMinimumDissolvedAlpha = 0.0 // 양쪽의 흐릿한 헤더 없애기
         calendarView.appearance.headerDateFormat = "YYYY년 MM월"
         calendarView.appearance.titleWeekendColor = .red
@@ -68,11 +68,11 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     func didFailWithError(error: Error) {
         print(error)
     }
-   
-
     
     
-//MARK: - 캘린더의 event도트 표시
+    
+    
+    //MARK: - 캘린더의 event도트 표시
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         if self.events.contains(date) {
             return 1
@@ -81,10 +81,10 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         }
     }
     
-//MARK: - 달력 수동 이동
+    //MARK: - 달력 수동 이동
     @IBAction func moveToNext(_ sender: UIButton) {
         self.moveCurrentPage(moveUp: true)
-       
+        
     }
     
     @IBAction func moveToPrev(_ sender: UIButton) {
@@ -97,20 +97,20 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         calendarView.currentPage = calendar.date(byAdding: dateComponents, to: calendarView.currentPage)!
         self.calendarView.setCurrentPage(calendarView.currentPage, animated: true)
     }
-
+    
     
     //MARK: - 캘린더의 날짜 클릭 시 Action
-        func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-            
-            dateInfo = dateFormatter.string(from: date)
-            print(dateInfo! , "날짜가 선택 되었습니다.") // dateInfo 값을 기준으로 경기일정 전반내용 을 출력하는 것이 목적!!
-            if events.contains(date) {
-                self.performSegue(withIdentifier: "gotoNext", sender: self)
-                print("다음화면으로 넘어갑니다.")
-                
-            }
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        dateInfo = dateFormatter.string(from: date)
+        print(dateInfo! , "날짜가 선택 되었습니다.") // dateInfo 값을 기준으로 경기일정 전반내용 을 출력하는 것이 목적!!
+        if events.contains(date) {
+            self.performSegue(withIdentifier: "gotoNext", sender: self)
+            print("다음화면으로 넘어갑니다.")
             
         }
+        
+    }
     // MARK: - Navigation
     
     
@@ -132,14 +132,14 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     
 }
-  // MARK: - UIPickerView
+// MARK: - UIPickerView
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-
-
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 3
     }
