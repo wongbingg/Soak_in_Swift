@@ -16,6 +16,10 @@ struct SportModel {
     let homeTeam: [String]
     let awayLogo: [String]
     let awayTeam: [String]
-    let datelist: [Date]
+    let datelist: [String]
+    let timestamplist: [String] //
+    
     
 }
+
+

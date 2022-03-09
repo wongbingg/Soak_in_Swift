@@ -20,6 +20,7 @@ struct SportData: Codable {
 
         struct Fixture: Codable {
             let date: String
+            let timestamp: Int
         }
         struct League: Codable {
             let id: Int

@@ -56,32 +56,25 @@ struct SportManager {
             // calendar도트 추가 할 date 값만 빼오기
             let decodedData = try decoder.decode(SportData.self, from: sportData)
             
-            var dateComponents = DateComponents() //?
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            
             var leagueNameList:[String] = []
             var logoimagestringList:[String] = []
             var homeLogoList:[String] = []
             var homeTeamList:[String] = []
             var awayLogoList:[String] = []
             var awayTeamList:[String] = []
-            
-            var dateList:[Date]=[]
+            var timestampList:[String] = []
+            var dateList:[String] = []
+            let eventDate = DateFormatter()
+            eventDate.dateFormat = "yyyy-MM-dd"  //ViewController 도트표시에 들어갈 정보
+            let dateDetail = DateFormatter()
+            dateDetail.dateFormat = "yyyy년 MM월 dd일 a hh시 mm분" //NextVC에 들어갈 정보
             
             
             for i in 0..<decodedData.response.count {
-                
-                if let datesubstring = subT(decodedData.response[i].fixture.date,0,10) {
-                    if let dateDate = dateFormatter.date(from:String(datesubstring)) {
-                        dateList.append(dateDate)
-                    }else {
-                        print("dateDate is nil")
-                    }
-                }else{
-                    print("subT is nil!")
-                }
-                
+
+                let date = Date(timeIntervalSince1970: TimeInterval(decodedData.response[i].fixture.timestamp))
+                dateList.append(eventDate.string(from: date))  //도트표시에 이용할 데이트 타입
+                timestampList.append(dateDetail.string(from: date)) //NextVC에 사용할 HH:mm 타입
                 leagueNameList.append(decodedData.response[i].league.name)
                 logoimagestringList.append(decodedData.response[i].league.logo)
                 homeLogoList.append(decodedData.response[i].teams.home.logo)
@@ -90,7 +83,7 @@ struct SportManager {
                 awayTeamList.append(decodedData.response[i].teams.away.name)
             }
 
-            let sport = SportModel(leagueName: leagueNameList, logoimagestring: logoimagestringList, homeLogo: homeLogoList, homeTeam: homeTeamList, awayLogo: awayLogoList, awayTeam: awayTeamList, datelist: dateList)
+            let sport = SportModel(leagueName: leagueNameList, logoimagestring: logoimagestringList, homeLogo: homeLogoList, homeTeam: homeTeamList, awayLogo: awayLogoList, awayTeam: awayTeamList, datelist: dateList ,timestamplist: timestampList)
             return sport
         } catch {
             delegate?.didFailWithError(error: error)
@@ -98,11 +91,4 @@ struct SportManager {
         }
     }
     
-    
-    //문자열 슬라이싱
-    func subT(_ text: String ,_ num1:Int, _ num2:Int) -> Substring? {
-        
-        let sub = text[text.index(text.startIndex, offsetBy: num1)..<text.index(text.startIndex,offsetBy: num2)]
-        return sub
-    }
 }

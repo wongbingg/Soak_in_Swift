@@ -13,7 +13,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var choiceTeam: UIPickerView!
     
-    
     var sportManager = SportManager() //test
     
     var teamId:String = ""
@@ -27,6 +26,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     //  getData()에서 받아온 값들을 저장해주고,
     var events = [Date]()
+    var eventsDetail = [String]()
     var leagueName = [String]()
     var logoimagestring = [String]()
     var homeLogo = [String]()
@@ -55,22 +55,21 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     func didUpdateSport(_ sportManager: SportManager, sport: SportModel) {
         DispatchQueue.main.async {
-            self.events = sport.datelist
+            
+            self.events = sport.datelist.map{self.dateFormatter.date(from: $0)!}
             self.leagueName = sport.leagueName
             self.logoimagestring = sport.logoimagestring
             self.homeLogo = sport.homeLogo
             self.homeTeam = sport.homeTeam
             self.awayLogo = sport.awayLogo
             self.awayTeam = sport.awayTeam
+            self.eventsDetail = sport.timestamplist
         }
     }
     
     func didFailWithError(error: Error) {
         print(error)
     }
-    
-    
-    
     
     //MARK: - 캘린더의 event도트 표시
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
@@ -106,12 +105,12 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print(dateInfo! , "날짜가 선택 되었습니다.") // dateInfo 값을 기준으로 경기일정 전반내용 을 출력하는 것이 목적!!
         if events.contains(date) {
             self.performSegue(withIdentifier: "gotoNext", sender: self)
-            print("다음화면으로 넘어갑니다.")
+            
             
         }
         
     }
-    // MARK: - Navigation
+    // MARK: - Navigation 데이터 넘겨주기
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -126,6 +125,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             destinationVC.awayteam = awayTeam
             destinationVC.awayLogo = awayLogo
             destinationVC.events = events
+            destinationVC.eventsDetail = eventsDetail
             
         }
         
