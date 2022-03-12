@@ -16,8 +16,8 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     var sportManager = SportManager() //test
     
     var teamId:String = ""
-    let teamList = ["Arsenal","Brentford","Chelsea"]
-    let teamDiction = ["Arsenal":"42","Brentford":"55","Chelsea":"49"]
+    let teamList = ["Arsenal","Brentford","Chelsea","Internacional Tirana"] // 좋아하는 팀으로 등록한 팀들이 여기 저장되게!
+    let teamDiction = ["Arsenal":"42","Brentford":"55","Chelsea":"49","Internacional Tirana":"10716"]
     
     let calendar = Calendar.current
     var dateComponents = DateComponents()
@@ -141,7 +141,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return teamList.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
