@@ -7,5 +7,12 @@
 
 import Foundation
 
-print("Hello, World!")
+let input = readLine()
+if let input = input {
+    let mappingInput = input.precomposedStringWithCompatibilityMapping
+    print(input)
+    print(mappingInput)
+}
+
+
 

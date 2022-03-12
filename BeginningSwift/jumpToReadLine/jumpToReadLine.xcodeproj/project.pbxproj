@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		AFBC363127DA303A00000662 /* jumpToReadLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jumpToReadLine; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFBC363427DA303A00000662 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AFBC363427DA303A00000662 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
