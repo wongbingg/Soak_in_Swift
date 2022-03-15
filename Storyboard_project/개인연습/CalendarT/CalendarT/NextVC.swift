@@ -18,7 +18,6 @@ class NextVC: UIViewController {
     @IBOutlet weak var awayLogoImage: UIImageView!
     @IBOutlet weak var awayTeam: UILabel!
     
-    
     // viewcontroller 에서 받아온  값
     var currentDate: String?
     var currentTeamId: String?
@@ -55,16 +54,6 @@ class NextVC: UIViewController {
             self.awayLogoImage.kf.setImage(with:url2)
             self.awayTeam.text = self.awayteam[idx]
             self.dateLabel.text = "\(self.eventsDetail[idx])"
-            
         }
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+    }   
 }

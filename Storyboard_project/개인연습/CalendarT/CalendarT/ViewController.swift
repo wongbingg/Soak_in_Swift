@@ -8,7 +8,7 @@
 import UIKit
 import FSCalendar
 
-class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance ,SportManagerDelegate{
+class ViewController: UIViewController,SportManagerDelegate { //FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var choiceTeam: UIPickerView!
@@ -17,8 +17,8 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     var teamId:String = ""
     let teamList = ["Arsenal","Brentford","Chelsea","Internacional Tirana"] // 좋아하는 팀으로 등록한 팀들이 여기 저장되게!
-    let teamDiction = ["Arsenal":"42","Brentford":"55","Chelsea":"49","Internacional Tirana":"10716"]
-    
+    let teamDiction = ["Arsenal":"42","Brentford":"55","Chelsea":"49","Internacional Tirana":"10716"] // 전체 팀id정보가 들어간 대용량 딕셔너리 필요..
+                                                                                                      
     let calendar = Calendar.current
     var dateComponents = DateComponents()
     let dateFormatter = DateFormatter()
@@ -36,26 +36,18 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //  NextVC로 그대로 넘겨준다
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         sportManager.delegate = self
         choiceTeam.dataSource = self
         choiceTeam.delegate = self
         setUpDesign()
-        
-    }
-    
-    func setUpDesign() {
-        
-        calendarView.scope = .month
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0 // 양쪽의 흐릿한 헤더 없애기
-        calendarView.appearance.headerDateFormat = "YYYY년 MM월"
-        calendarView.appearance.titleWeekendColor = .red
     }
     
     func didUpdateSport(_ sportManager: SportManager, sport: SportModel) {
+        
         DispatchQueue.main.async {
-            
+        
             self.events = sport.datelist.map{self.dateFormatter.date(from: $0)!}
             self.leagueName = sport.leagueName
             self.logoimagestring = sport.logoimagestring
@@ -71,50 +63,11 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print(error)
     }
     
-    //MARK: - 캘린더의 event도트 표시
-    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        if self.events.contains(date) {
-            return 1
-        } else {
-            return 0
-        }
-    }
-    
-    //MARK: - 달력 수동 이동
-    @IBAction func moveToNext(_ sender: UIButton) {
-        self.moveCurrentPage(moveUp: true)
-        
-    }
-    
-    @IBAction func moveToPrev(_ sender: UIButton) {
-        
-        self.moveCurrentPage(moveUp: false)
-    }
-    
-    private func moveCurrentPage(moveUp: Bool) {
-        dateComponents.month = moveUp ? 1 : -1
-        calendarView.currentPage = calendar.date(byAdding: dateComponents, to: calendarView.currentPage)!
-        self.calendarView.setCurrentPage(calendarView.currentPage, animated: true)
-    }
-    
-    
-    //MARK: - 캘린더의 날짜 클릭 시 Action
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
-        dateInfo = dateFormatter.string(from: date)
-        print(dateInfo! , "날짜가 선택 되었습니다.") // dateInfo 값을 기준으로 경기일정 전반내용 을 출력하는 것이 목적!!
-        if events.contains(date) {
-            self.performSegue(withIdentifier: "gotoNext", sender: self)
-            
-            
-        }
-        
-    }
-    // MARK: - Navigation 데이터 넘겨주기
-    
-    
+    // MARK: Navigation 데이터 넘겨주기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "gotoNext" {
+            
             let destinationVC = segue.destination as! NextVC
             destinationVC.currentDate = dateInfo
             destinationVC.currentTeamId = teamId
@@ -126,15 +79,62 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             destinationVC.awayLogo = awayLogo
             destinationVC.events = events
             destinationVC.eventsDetail = eventsDetail
-            
         }
+    }
+}
+
+//MARK: - FSCalendar
+
+extension ViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+    
+    func setUpDesign() {
         
+        calendarView.scope = .month
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0 // 양쪽의 흐릿한 헤더 없애기
+        calendarView.appearance.headerDateFormat = "YYYY년 MM월"
+        calendarView.appearance.titleWeekendColor = .red
     }
     
-}
-// MARK: - UIPickerView
-extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    // 캘린더의 event도트 표시
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        
+        if self.events.contains(date) {
+            return 1
+        } else {
+            return 0
+        }
+    }
     
+    // 달력 수동 이동
+    @IBAction func moveToNext(_ sender: UIButton) {
+        self.moveCurrentPage(moveUp: true)
+    }
+    
+    @IBAction func moveToPrev(_ sender: UIButton) {
+        self.moveCurrentPage(moveUp: false)
+    }
+    
+    private func moveCurrentPage(moveUp: Bool) {
+        dateComponents.month = moveUp ? 1 : -1
+        calendarView.currentPage = calendar.date(byAdding: dateComponents, to: calendarView.currentPage)!
+        self.calendarView.setCurrentPage(calendarView.currentPage, animated: true)
+    }
+    
+    // 캘린더의 날짜 클릭 시 Action
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        dateInfo = dateFormatter.string(from: date)
+        print(dateInfo! , "날짜가 선택 되었습니다.") // dateInfo 값을 기준으로 경기일정 전반내용 을 출력하는 것이 목적!!
+        if events.contains(date) {
+            self.performSegue(withIdentifier: "gotoNext", sender: self)
+        }
+    }
+}
+
+// MARK: - UIPickerView
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -154,7 +154,6 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         print(selectedTeam)
         teamId = teamDiction[selectedTeam]!
         sportManager.getData(season: "2021", teamid: teamId)
-        
     }
 }
 

@@ -7,12 +7,15 @@
 
 import Foundation
 
-let input = readLine()
-if let input = input {
-    let mappingInput = input.precomposedStringWithCompatibilityMapping
-    print(input)
-    print(mappingInput)
-}
+
+let input = readLine()!
+
+var nfc = input.precomposedStringWithCanonicalMapping
+var nfkc = input.precomposedStringWithCompatibilityMapping
+
+print(nfc)
+print(nfkc)
 
 
-
+var text = "이원빈"
+print(text)

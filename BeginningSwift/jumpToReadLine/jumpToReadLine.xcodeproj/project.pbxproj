@@ -25,10 +25,18 @@
 /* Begin PBXFileReference section */
 		AFBC363127DA303A00000662 /* jumpToReadLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jumpToReadLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBC363427DA303A00000662 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AFC24E4F27DE37CF0015D64E /* unitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AFBC362E27DA303A00000662 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC24E4C27DE37CF0015D64E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -50,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				AFBC363127DA303A00000662 /* jumpToReadLine */,
+				AFC24E4F27DE37CF0015D64E /* unitTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +91,23 @@
 			productReference = AFBC363127DA303A00000662 /* jumpToReadLine */;
 			productType = "com.apple.product-type.tool";
 		};
+		AFC24E4E27DE37CF0015D64E /* unitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFC24E5527DE37CF0015D64E /* Build configuration list for PBXNativeTarget "unitTest" */;
+			buildPhases = (
+				AFC24E4B27DE37CF0015D64E /* Sources */,
+				AFC24E4C27DE37CF0015D64E /* Frameworks */,
+				AFC24E4D27DE37CF0015D64E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = unitTest;
+			productName = unitTest;
+			productReference = AFC24E4F27DE37CF0015D64E /* unitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +119,9 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					AFBC363027DA303A00000662 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					AFC24E4E27DE37CF0015D64E = {
 						CreatedOnToolsVersion = 13.2;
 					};
 				};
@@ -111,9 +140,20 @@
 			projectRoot = "";
 			targets = (
 				AFBC363027DA303A00000662 /* jumpToReadLine */,
+				AFC24E4E27DE37CF0015D64E /* unitTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFC24E4D27DE37CF0015D64E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFBC362D27DA303A00000662 /* Sources */ = {
@@ -121,6 +161,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFBC363527DA303A00000662 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC24E4B27DE37CF0015D64E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +311,36 @@
 			};
 			name = Release;
 		};
+		AFC24E5327DE37CF0015D64E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SWPBG3YXG5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wonbeen.unitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AFC24E5427DE37CF0015D64E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SWPBG3YXG5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wonbeen.unitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -281,6 +358,15 @@
 			buildConfigurations = (
 				AFBC363927DA303A00000662 /* Debug */,
 				AFBC363A27DA303A00000662 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFC24E5527DE37CF0015D64E /* Build configuration list for PBXNativeTarget "unitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC24E5327DE37CF0015D64E /* Debug */,
+				AFC24E5427DE37CF0015D64E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
