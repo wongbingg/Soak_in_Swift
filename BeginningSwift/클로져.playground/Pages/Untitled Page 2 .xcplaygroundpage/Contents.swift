@@ -66,3 +66,30 @@ result = calculate(a:10,b:10){$0 + $1}
 
 
 
+//-----------------------------------------------------
+
+//MARK: - 공식문서에 나온 closure 예시
+
+let names = ["Ch","Al","Ew","Ba","Da"]
+
+func backward(_ s1: String, _ s2: String) -> Bool {
+    return s1 > s2
+}
+var reversedNames1 = names.sorted(by: {(s1: String, s2: String) -> Bool in
+    return s1 > s2
+})
+
+var reversedNames2 = names.sorted(by: {(s1: String, s2: String) -> Bool in
+    return s1 > s2 })
+
+//sorted함수의 Parameters타입, Return타입 추론이 가능하기 때문에 두 타입을 생략가능
+var reversedNames3 = names.sorted(by: { s1, s2 in return s1 > s2 })
+
+//single-expression closure일 경우( 리턴값이 하나일 경우?) return 생략가능
+var reversedNames4 = names.sorted(by: { s1, s2 in s1 > s2})
+
+//shorthand argument names
+var reversedNames5 = names.sorted(by: { $0 > $1 } )
+
+//operator methods
+var reversedNames6 = names.sorted(by: > )
