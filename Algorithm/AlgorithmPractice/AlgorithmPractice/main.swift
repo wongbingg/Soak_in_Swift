@@ -1,17 +1,34 @@
-//<2941> 크로아티아 알파벳
+//<1193> 분수찾기
+// 분자수열 1,(1,2),(3,2,1),(1,2,3,4),(5,4,3,2,1),(1,2,3,4,5,6),(7,6,5,4,3,2,1)....
+// 분모수열 1,(2,1),(1,2,3),(4,3,2,1),(1,2,3,4,5),(6,5,4,3,2,1)...
+// inputNumber 값을 기준으로 for문을 몇번 돌려야 하는지 지정해준 후 값 찾기
 
-//크로아티아 문자를 인식하고 1로 치환을 해준다
-//남은 문자는 .count 를 이용해 갯수를 세어준 후 cnt랑 합쳐준다
 
-import Foundation
+var inputNumber = Int(readLine()!)!
+var numberOfGroup = 0
+var groupElementCount = 0
+var list = [Int]()
 
-let input = readLine()!
-var testInput = input
-var croatiaLetterList = ["c=","c-","dz=","d-","lj","nj","s=","z="]
-for i in croatiaLetterList {
-    if testInput.contains(i){
-        testInput = testInput.replacingOccurrences(of: i, with: "1")
+
+for elementCount in 1... {
+    numberOfGroup += 1
+    groupElementCount += elementCount
+    if groupElementCount >= inputNumber {
+        groupElementCount -= elementCount
+        inputNumber -= groupElementCount
+        break
     }
 }
-print(testInput.count)
+
+for i in 1...numberOfGroup {
+    
+    list.append(i)
+}
+
+if numberOfGroup % 2 == 0 {
+    print("\(list[inputNumber - 1])/\(list.reversed()[inputNumber - 1])")
+} else {
+    print("\(list.reversed()[inputNumber - 1])/\(list[inputNumber - 1])")
+}
+
 
