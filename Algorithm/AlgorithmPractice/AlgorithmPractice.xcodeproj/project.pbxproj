@@ -6,10 +6,6 @@
 	objectVersion = 55;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		AFBB0050280C5115009D4F01 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB004F280C5115009D4F01 /* main.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		AF5058FD278AF32800722E27 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -54,7 +50,7 @@
 		AF9BA11D2803FB5300E65BB6 /* 1316.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1316.swift; sourceTree = "<group>"; };
 		AFBB004A280C3933009D4F01 /* 1712.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1712.swift; sourceTree = "<group>"; };
 		AFBB004C280C3E7E009D4F01 /* 2292.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2292.swift; sourceTree = "<group>"; };
-		AFBB004F280C5115009D4F01 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AFBB004F280C5115009D4F01 /* 1193.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1193.swift; sourceTree = "<group>"; };
 		AFD4FFF127D453C5006D207C /* 11654f&s.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "11654f&s.swift"; sourceTree = "<group>"; };
 		AFD6CB41278C1958009CF61A /* 2739.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2739.swift; sourceTree = "<group>"; };
 		AFD6CB43278C1B45009CF61A /* 10950.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10950.swift; sourceTree = "<group>"; };
@@ -143,7 +139,7 @@
 				AF9BA11D2803FB5300E65BB6 /* 1316.swift */,
 				AFBB004A280C3933009D4F01 /* 1712.swift */,
 				AFBB004C280C3E7E009D4F01 /* 2292.swift */,
-				AFBB004F280C5115009D4F01 /* main.swift */,
+				AFBB004F280C5115009D4F01 /* 1193.swift */,
 			);
 			path = AlgorithmPractice;
 			sourceTree = "<group>";
@@ -207,7 +203,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFBB0050280C5115009D4F01 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +337,7 @@
 					"@loader_path/../Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AlgorithmPractice/AlgorithmPractice-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -360,6 +356,7 @@
 					"@loader_path/../Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AlgorithmPractice/AlgorithmPractice-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

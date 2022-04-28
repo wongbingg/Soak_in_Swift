@@ -80,11 +80,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Items" id="RZ7-z5-ngE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gP4-zD-jTM">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="Egq-5r-7wg" id="ejA-Ro-PPf"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="gP4-zD-jTM">
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="Egq-5r-7wg" id="ejA-Ro-PPf"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="camera" id="15z-4O-5kX"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="searchbBar" destination="s4x-aj-Yqp" id="5XC-jo-ncR"/>
