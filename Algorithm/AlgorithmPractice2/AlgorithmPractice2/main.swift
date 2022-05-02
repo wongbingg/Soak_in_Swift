@@ -1,18 +1,8 @@
-// <4153> 직각삼각형
+// <택시기하학>
 
-var result: [String] = []
+import Foundation
 
-while true {
-    var input = readLine()?.split(separator: " ").map{Int($0)!} ?? [0]
-    guard Set(input) != [0] else { break }
-    let maxNumber = input.max()
-    input.remove(at: input.firstIndex(of: maxNumber!)!)
-    if maxNumber! * maxNumber! == (input[0] * input[0]) + (input[1] * input[1]) {
-        result.append("right")
-    } else {
-        result.append("wrong")
-    }
-}
-result.forEach { str in
-    print(str)
-}
+let R = Double(readLine()!)!
+print(String(format: "%.6f", R * R * Double.pi))
+print(String(format: "%.6f", 2 * R * R))
+
