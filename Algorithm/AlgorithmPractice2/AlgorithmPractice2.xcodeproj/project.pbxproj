@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AFFE9EC52820FA5F0046763B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE9EC42820FA5F0046763B /* main.swift */; };
+		AFE527D328228EE7007D5395 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE527D228228EE7007D5395 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +27,7 @@
 		AF114274281B437400B437CA /* 4948.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 4948.swift; sourceTree = "<group>"; };
 		AF114276281B7AF100B437CA /* 9020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 9020.swift; sourceTree = "<group>"; };
 		AF114278281B96EB00B437CA /* 9020advanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 9020advanced.swift; sourceTree = "<group>"; };
+		AF3C452E2821FA19002A87CB /* 2447fail나중에다시해보기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2447fail나중에다시해보기.swift"; sourceTree = "<group>"; };
 		AF422F302817605400983DBD /* 2775.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2775.swift; sourceTree = "<group>"; };
 		AF4DD31B281583340020F59F /* AlgorithmPractice2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmPractice2; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4DD31E281583340020F59F /* 2869.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2869.swift; sourceTree = "<group>"; };
@@ -39,12 +40,13 @@
 		AF714DA0281A8F9A004CE2A3 /* 2581.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2581.swift; sourceTree = "<group>"; };
 		AF94ED30281D918D00255C47 /* 1085.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1085.swift; sourceTree = "<group>"; };
 		AFB0562628192D8A00F0FA18 /* 10757f.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10757f.swift; sourceTree = "<group>"; };
+		AFE527D228228EE7007D5395 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AFFE9EBA282002910046763B /* 3053.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3053.swift; sourceTree = "<group>"; };
 		AFFE9EBC282010F60046763B /* 10926.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10926.swift; sourceTree = "<group>"; };
 		AFFE9EBE2820134A0046763B /* 1002.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1002.swift; sourceTree = "<group>"; };
 		AFFE9EC02820ED010046763B /* 10872.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10872.swift; sourceTree = "<group>"; };
 		AFFE9EC22820EEAB0046763B /* 10870.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10870.swift; sourceTree = "<group>"; };
-		AFFE9EC42820FA5F0046763B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AFFE9EC42820FA5F0046763B /* 17478.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17478.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,9 @@
 				AFFE9EBE2820134A0046763B /* 1002.swift */,
 				AFFE9EC02820ED010046763B /* 10872.swift */,
 				AFFE9EC22820EEAB0046763B /* 10870.swift */,
-				AFFE9EC42820FA5F0046763B /* main.swift */,
+				AFFE9EC42820FA5F0046763B /* 17478.swift */,
+				AF3C452E2821FA19002A87CB /* 2447fail나중에다시해보기.swift */,
+				AFE527D228228EE7007D5395 /* main.swift */,
 			);
 			path = AlgorithmPractice2;
 			sourceTree = "<group>";
@@ -160,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFFE9EC52820FA5F0046763B /* main.swift in Sources */,
+				AFE527D328228EE7007D5395 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
