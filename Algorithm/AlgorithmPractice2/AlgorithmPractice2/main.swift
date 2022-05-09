@@ -1,25 +1,14 @@
-//<11729> 하노이 탑 이동 순서
+//<2525> 오븐시계
+//입력 첫번째줄: 현재시각 A시 (0~23) B분 (0~59)
+//입력 두번째줄: 걸리는시간 C (0~1000분)
 
-// 핵심: hanoi(N)은 hanoi(N-1)을 거친다
-//https://shoark7.github.io/programming/algorithm/tower-of-hanoi 블로그 참고
-
-let inputValue = Int(readLine()!)!
-var result: [String] = []
-
-func hanoi(N: Int,start A: String ,to C: String ,via B: String) {
-    if N == 1 {
-        move(start: A, to: C)
-    } else {
-        hanoi(N: N - 1, start: A, to: B, via: C)
-        move(start: A, to: C)
-        hanoi(N: N - 1, start: B, to: C, via: A)
-    }
+let nowTime = readLine()?.split(separator: " ").map{ Int($0)! } ?? [0]
+var A = nowTime[0] // 현재 시
+var B = nowTime[1] // 현재 분
+let C = Int(readLine()!)! // 걸리는 분
+A += Int((B + C) / 60)
+B = (B + C) % 60
+if A >= 24 {
+    A -= 24
 }
-
-func move(start: String, to: String) {
-    result.append("\(start) \(to)")
-}
-
-hanoi(N: inputValue, start: "1", to: "3", via: "2")
-print(result.count)
-result.forEach{ print($0)}
+print(A,B)

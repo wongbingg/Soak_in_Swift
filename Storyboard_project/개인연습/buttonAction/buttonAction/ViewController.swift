@@ -12,22 +12,16 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var inputText: UITextField!
-    
-    @IBAction func buttonPress(_ sender: UIButton) {
-        cal(inputText.text!)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    func cal(_ input:String){
-        if input.count != 0{
-            self.messageLabel.text = input
-        }else {
-            print("not done")
-        }
+    
+    @IBAction func stepperButton(_ sender: UIStepper) {
+        
+        messageLabel.text = String(sender.value)
+        
     }
 }
 
