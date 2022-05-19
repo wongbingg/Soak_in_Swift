@@ -1,15 +1,55 @@
-//<11050> 이항 계수1
-// 자연수 N과 정수 K가 주어졌을 때, 이항계수를 구하는 프로그램을 작성해라.
-// 첫줄에 N 과 K가 주어진다. (1 <= N <= 10  , 0 <= K <= N)
-// 결국 N C K 를 구하는 문제
+//< 1874 > 스택 수열
+// 스택은 LIFO 특성을 가진다.
+// 1 부터 n까지의 수를 스택에 넣었다가 뽑아 늘어놓음으로써, 하나의 수열을 만들 수 있다.
 
-let input = readLine()!.split(separator: " ").map{ Int($0)! }
-print(fac(input[0]) / (fac(input[0] - input[1]) * fac(input[1])))
-func fac(_ x: Int) -> Int {
-    if x <= 1{  // 여기를 if x == 1 로 작성했었는데 메모리 초과가 났다.. < 하나 차이로 메모리가 초과가 안되었다..
-        return 1
-    }
-    return x * fac(x - 1)
+let n = Int(readLine()!)!
+var comparedList: [Int] = []
+for _ in 1...n {
+    comparedList.append(Int(readLine()!)!)
 }
 
+struct StackQueue {
+    
+    private var stack = Array<Int>()
+    var isEmpty: Bool {
+        return stack.isEmpty
+    }
+    var last: Int? {
+        return stack.last
+    }
+    
+    mutating func enqueue(_ element: Int) {
+        stack.append(element)
+    }
+    
+    mutating func dequeue() {
+        stack.popLast()
+    }
+}
+
+var stack = StackQueue()
+var num = 1 //7
+var resultList: [String] = []
+for i in comparedList {
+    for _ in 1... {
+        if num > n + 1 {
+            resultList.append("NO")
+            break
+        }
+        if stack.last == i {
+            stack.dequeue()
+            resultList.append("-")
+            break
+        }
+        stack.enqueue(num)
+        resultList.append("+")
+        num += 1
+    }
+}
+
+if resultList.contains("NO") {
+    print("NO")
+} else {
+    resultList.forEach{print($0)}
+}
 
