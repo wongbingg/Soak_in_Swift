@@ -1,22 +1,17 @@
-//<1181> 단어정렬
-// 알파벳 소문자로 이루어진 N개의 단어가 들어오면 아래와 같은 조건에 따라 정렬하는 프로그램을 작성하라
-// 1. 길이가 짧은 것 부터
-// 2. 길이가 같으면 사전 순으로
-// <입력> 첫째 줄에 단어의 개수 N (1<= N <= 20,000) 둘째줄 부터 N개의 단어가 한줄씩 추가된다. 문자열 길이는 50을 넘지 않음
+// <15829> Hashing
+// 마치 31진수를 나타내는 과정 같다.
+// abcde 의 해시값은 1xpow(31,0) + 2xpow(31,1) + 3xpow(31,2) + 4xpow(31,3)
+//예제 1: abcde의 해시 값은 1 × 310 + 2 × 311 + 3 × 312 + 4 × 313 + 5 × 314 = 1 + 62 + 2883 + 119164 + 4617605 = 4739715이다.
+//예제 2: zzz의 해시 값은 26 × 310 + 26 × 311 + 26 × 312 = 26 + 806 + 24986 = 25818이다.
+import Foundation
+let dic: [String: Int] = ["a":1,"b":2,"c":3,"d":4,"e":5,"f":6,"g":7,"h":8,"i":9,"j":10,"k":11,"l":12,"m":13,"n":14,"o":15,"p":16,"q":17,"r":18,"s":19,"t":20,"u":21,"v":22,"w":23,"x":24,"y":25,"z":26]
+var L = Int(readLine()!)!
+let englishInput = readLine()!
+var result = 0
+for i in 0...(L - 1) {
+    result += dic[String(str)]!
+}
+print(result % 1234567891)
 
-// 73068KB, 476ms ...
-let N = Int(readLine()!)!
-var list: [String] = []
-(1...N).forEach { _ in
-    let element = readLine()!
-    list.append(element)
-}
-var resultList: [String] = []
-for i in 1...50 {
-    let dummyList = list.filter{ $0.count == i}
-    resultList += Set(dummyList).sorted()
-    if resultList.count == Set(list).count {
-        break
-    }
-}
-resultList.forEach{ print($0) }
+//NSDecimalNumber(decimal: pow(31,L - 1)).intValue
+//dic[String(str)]!
