@@ -1,27 +1,18 @@
-// <11866> 요세푸스 문제 0
 /*
- 1번부터 N번까지 N명의 사람이 원을 이루고 앉아있고, 양의 정수 K(<=N)가 주어진다. 이제 순서대로 K번째 사람을 제거한다. 한 사람이 제거되면 남은 사람들로 이루어진 원을 따라 이 과정을 계속해 나간다. 이 과정은 N명의 사람이 모두 제거될 때 까지 계속된다. 원에서 사람들이 제거되는 순서를 (N,K) - 요세푸스 순열이라고 한다. 예를들어 , (7,3) 요세푸스 순열은 <3,6,2,7,5,1,4> 이다
-     N과 K 가 주어지면 (N,K) 요세푸스 순열을 구하는 프로그램을 작성하시오.
- */
+ <11650> 좌표정렬하기
+ 2차원 평면 위의 점 N개가 주어진다. 좌표를 x좌표가 증가하는 순으로, x좌표가 같으면 y좌표가 증가하는 순서로 정렬한 다음 출력하는 프로그램을 작성하시오.
+ 
+ 첫째 줄에 점의 개수 N (1 ≤ N ≤ 100,000)이 주어진다. 둘째 줄부터 N개의 줄에는 i번점의 위치 xi와 yi가 주어진다. (-100,000 ≤ xi, yi ≤ 100,000) 좌표는 항상 정수이고, 위치가 같은 두 점은 없다.
+*/
+var list: [[Int]] = []
 
-let input = readLine()!.split(separator: " ").map { Int($0)! }
-let n = input[0]
-let k = input[1]
-var circle = Array<Int>(1...n)
-var killIndex = 0
-var resultList: [Int] = []
+let n = Int(readLine()!)!
+(1...n).forEach { _ in
+    let position = readLine()!.split(separator: " ").map { Int($0)! }
+    list.append([position[0], position[1]])
+}
+let result = list.sorted { (a:[Int], b:[Int]) in
+    (a[0] <= b[0]) && (a[1] <= b[1])
+}
+result.forEach { print("\($0[0]) \($0[1])") }
 
-while circle.count > 0 {
-    killIndex += k - 1
-    while killIndex >= circle.count {
-        killIndex -= circle.count
-    }
-    let killedNumber = circle.remove(at: killIndex)
-    resultList.append(killedNumber)
-}
-var text = "<\(resultList.first!)"
-for i in 1...(resultList.count - 2) {
-    text += ", \(resultList[i])"
-}
-text += ", \(resultList.last!)>"
-print(text)
