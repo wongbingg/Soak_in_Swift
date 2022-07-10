@@ -1,18 +1,27 @@
 /*
- <11650> 좌표정렬하기
- 2차원 평면 위의 점 N개가 주어진다. 좌표를 x좌표가 증가하는 순으로, x좌표가 같으면 y좌표가 증가하는 순서로 정렬한 다음 출력하는 프로그램을 작성하시오.
- 
- 첫째 줄에 점의 개수 N (1 ≤ N ≤ 100,000)이 주어진다. 둘째 줄부터 N개의 줄에는 i번점의 위치 xi와 yi가 주어진다. (-100,000 ≤ xi, yi ≤ 100,000) 좌표는 항상 정수이고, 위치가 같은 두 점은 없다.
-*/
-var list: [[Int]] = []
+ VPS 형태를 판단하여 YES NO 로 출력해라.
+ ValidParenthesis String, VPS) 는 (), ()(), ()(()) ..
+ 1. 감싼형태 가능 (), (()), ((())), (((())))
+ 2. 접합형태 가능 (),()(),()()(), ()()()(),
+ 1,2 의 결과값도 VPS 형태이므로 그 결과값을 다시 1,2에 적용해볼 수 있다.
+ */
+import Foundation
 
-let n = Int(readLine()!)!
-(1...n).forEach { _ in
-    let position = readLine()!.split(separator: " ").map { Int($0)! }
-    list.append([position[0], position[1]])
-}
-let result = list.sorted { (a:[Int], b:[Int]) in
-    (a[0] <= b[0]) && (a[1] <= b[1])
-}
-result.forEach { print("\($0[0]) \($0[1])") }
+let T = Int(readLine()!)!
+var list: [String] = []
 
+(1...T).forEach { _ in
+    let input = readLine()!
+    list.append(input)
+}
+list.forEach { str in
+    var strForm = str
+    while strForm.contains("()") {
+        strForm = strForm.replacingOccurrences(of: "()", with: "")
+    }
+    if strForm == "" {
+        print("YES")
+    } else {
+        print("NO")
+    }
+}
