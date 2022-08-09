@@ -1,97 +1,50 @@
-// <10866> 덱 구현하기
+/*
+ <10816> 숫자카드 2
+ */
 
-struct Deque {
-    var enqueue: [Int] = []
-    var dequeue: [Int] = []
-    var size: Int {
-        return enqueue.count + dequeue.count
-    }
-    var empty: Int {
-        if enqueue.isEmpty && dequeue.isEmpty {
-            return 1
-        } else {
-            return 0
-        }
-    }
-    var front: Int {
-        guard empty == 0 else { return -1 }
-        if dequeue.isEmpty == false {
-            return dequeue.last!
-        } else {
-            return enqueue.first!
-        }
-    }
-    var back: Int {
-        guard empty == 0 else { return -1 }
-        if enqueue.isEmpty == false {
-            return enqueue.last!
-        } else {
-            return dequeue.first!
-        }
-    }
-    
-    mutating func push_front(x: Int) {
-        if dequeue.isEmpty == false {
-            dequeue.append(x)
-        } else {
-            dequeue = enqueue.reversed()
-            enqueue.removeAll()
-            dequeue.append(x)
-        }
-    }
-    
-    mutating func push_back(x: Int) { // 로직 부실
-        enqueue.append(x)
-    }
-    
-    mutating func pop_front() -> Int {
-        guard empty == 0 else { return -1 }
-        if dequeue.isEmpty == false {
-            return dequeue.popLast()!
-        } else {
-            dequeue = enqueue.reversed()
-            enqueue.removeAll()
-            return dequeue.popLast()!
-        }
-    }
-    
-    mutating func pop_back() -> Int {
-        guard empty == 0 else { return -1 }
-        if enqueue.isEmpty == false {
-            return enqueue.popLast()!
-        } else {
-            enqueue = dequeue.reversed()
-            dequeue.removeAll()
-            return enqueue.popLast()!
-        }
-    }
-}
-
-var deque = Deque()
-var result: [Int] = []
 let N = Int(readLine()!)!
-(1...N).forEach { _ in
-    let order = readLine()!.split(separator: " ")
-    switch order[0] {
-    case "push_front":
-        deque.push_front(x: Int(order[1])!)
-    case "push_back":
-        deque.push_back(x: Int(order[1])!)
-    case "pop_front":
-        result.append(deque.pop_front())
-    case "pop_back":
-        result.append(deque.pop_back())
-    case "size":
-        result.append(deque.size)
-    case "empty":
-        result.append(deque.empty)
-    case "front":
-        result.append(deque.front)
-    case "back":
-        result.append(deque.back)
-    default:
-        return
+var ownCardList = readLine()!.split(separator: " ").compactMap { Int($0) }
+let M = Int(readLine()!)!
+let answerCardList = readLine()!.split(separator: " ").compactMap { Int($0) }
+var result: [String] = []
+var hashMap = [Int: Int]()
+
+for i in ownCardList {
+    if hashMap.keys.contains(i) {
+        hashMap[i]! += 1
+    } else {
+        hashMap[i] = 1
+    }
+}
+for i in answerCardList {
+    if hashMap.keys.contains(i) {
+        result.append(String(hashMap[i]!))
+    } else {
+        result.append("0")
     }
 }
 
-result.forEach { print($0) }
+print(result.joined(separator: " "))
+
+//func binarySearch(to number: Int, in list: [Int]) -> Bool {
+//    let orderedList = list.sorted(by: <)
+//    var start = 0
+//    var last = orderedList.count - 1
+//    var middleIndex: Int {
+//        return (last + start) / 2
+//    }
+//    while start <= last {
+//        if orderedList[middleIndex] == number {
+//
+//            return true
+//        } else if orderedList[middleIndex] > number {
+//            last = middleIndex - 1
+//        } else if orderedList[middleIndex] < number {
+//            start = middleIndex + 1
+//        }
+//    }
+//    return false
+//}
+
+
+// MARK: - 알고리즘 분류: 자료구조, 정렬, 이분탐색, 해시를 사용한 집합과 맵 인데, 이분탐색을 이용할 방법을 찾지 못했다 ... 
