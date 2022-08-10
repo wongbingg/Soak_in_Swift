@@ -1,50 +1,46 @@
-/*
- <10816> 숫자카드 2
- */
+// <4949> 균형잡힌 세상
+// 입력 종료조건으로 마지막에 마침표가 들어온다.
 
-let N = Int(readLine()!)!
-var ownCardList = readLine()!.split(separator: " ").compactMap { Int($0) }
-let M = Int(readLine()!)!
-let answerCardList = readLine()!.split(separator: " ").compactMap { Int($0) }
-var result: [String] = []
-var hashMap = [Int: Int]()
-
-for i in ownCardList {
-    if hashMap.keys.contains(i) {
-        hashMap[i]! += 1
+func checkValid(_ str: String) -> Bool {
+    var parenthesis = [Character]()
+    for char in str {
+        switch char {
+        case "(":
+            parenthesis.append(char)
+        case "[":
+            parenthesis.append(char)
+        case ")":
+            if parenthesis.last == "(" {
+                parenthesis.popLast()
+            } else {
+                return false
+            }
+        case "]":
+            if parenthesis.last == "[" {
+                parenthesis.popLast()
+            } else {
+                return false
+            }
+        default:
+            continue
+        }
+    }
+    if parenthesis.isEmpty {
+        return true
     } else {
-        hashMap[i] = 1
+        return false
     }
 }
-for i in answerCardList {
-    if hashMap.keys.contains(i) {
-        result.append(String(hashMap[i]!))
+
+var result = [String]()
+while let input = readLine() {
+    guard input != "." else { break }
+    if checkValid(input) {
+        result.append("yes")
     } else {
-        result.append("0")
+        result.append("no")
     }
 }
-
-print(result.joined(separator: " "))
-
-//func binarySearch(to number: Int, in list: [Int]) -> Bool {
-//    let orderedList = list.sorted(by: <)
-//    var start = 0
-//    var last = orderedList.count - 1
-//    var middleIndex: Int {
-//        return (last + start) / 2
-//    }
-//    while start <= last {
-//        if orderedList[middleIndex] == number {
-//
-//            return true
-//        } else if orderedList[middleIndex] > number {
-//            last = middleIndex - 1
-//        } else if orderedList[middleIndex] < number {
-//            start = middleIndex + 1
-//        }
-//    }
-//    return false
-//}
-
-
-// MARK: - 알고리즘 분류: 자료구조, 정렬, 이분탐색, 해시를 사용한 집합과 맵 인데, 이분탐색을 이용할 방법을 찾지 못했다 ... 
+result.forEach { print($0) }
+// 열림 괄호가 스택처럼 쌓인다.
+// FILO, 가장 위에 쌓여있는 요소부터 차례로 제거해서 결국 모두 제거되어야 yes
