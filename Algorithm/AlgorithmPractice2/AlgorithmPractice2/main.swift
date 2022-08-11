@@ -1,46 +1,36 @@
-// <4949> 균형잡힌 세상
-// 입력 종료조건으로 마지막에 마침표가 들어온다.
+//<1654> 랜선 자르기
 
-func checkValid(_ str: String) -> Bool {
-    var parenthesis = [Character]()
-    for char in str {
-        switch char {
-        case "(":
-            parenthesis.append(char)
-        case "[":
-            parenthesis.append(char)
-        case ")":
-            if parenthesis.last == "(" {
-                parenthesis.popLast()
-            } else {
-                return false
-            }
-        case "]":
-            if parenthesis.last == "[" {
-                parenthesis.popLast()
-            } else {
-                return false
-            }
-        default:
-            continue
+
+let KN = readLine()!.split(separator: " ").compactMap { Int($0) }
+let K = KN[0]
+let N = KN[1]
+var list = [Int]()
+(1...K).forEach { _ in
+    let lan = Int(readLine()!)!
+    list.append(lan)
+}
+
+var start = 1
+var end = list.reduce(0, +) / N
+var mid: Int {
+    return (start + end) / 2
+}
+
+func productCount(with length: Int) -> Int {
+    return list.map { $0 / length }.reduce(0, +)
+}
+
+while start <= end {
+    if productCount(with: mid) < N {
+        end = mid - 1
+    } else if productCount(with: mid) > N {
+        start = mid + 1
+    } else {
+        if productCount(with: mid + 1) < N {
+            break
+        } else {
+            start = mid + 1
         }
     }
-    if parenthesis.isEmpty {
-        return true
-    } else {
-        return false
-    }
 }
-
-var result = [String]()
-while let input = readLine() {
-    guard input != "." else { break }
-    if checkValid(input) {
-        result.append("yes")
-    } else {
-        result.append("no")
-    }
-}
-result.forEach { print($0) }
-// 열림 괄호가 스택처럼 쌓인다.
-// FILO, 가장 위에 쌓여있는 요소부터 차례로 제거해서 결국 모두 제거되어야 yes
+print(mid)
