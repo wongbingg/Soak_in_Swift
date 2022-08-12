@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF0AFD1C28A51A8900DD3290 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AFD1B28A51A8900DD3290 /* main.swift */; };
+		AF26B2BB28A67B2100A4C8FA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54E4732837C88D00A33529 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +28,7 @@
 		AF09AA1528A35E0D00AB99E9 /* 10773.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10773.swift; sourceTree = "<group>"; };
 		AF09AA1728A37BD400AB99E9 /* 4949.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 4949.swift; sourceTree = "<group>"; };
 		AF0AFD1828A4E9C300DD3290 /* 2108시간줄여보기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2108시간줄여보기.swift"; sourceTree = "<group>"; };
-		AF0AFD1B28A51A8900DD3290 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AF0AFD1B28A51A8900DD3290 /* 1654.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1654.swift; sourceTree = "<group>"; };
 		AF114272281AD6AE00B437CA /* 1929.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1929.swift; sourceTree = "<group>"; };
 		AF114274281B437400B437CA /* 4948.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 4948.swift; sourceTree = "<group>"; };
 		AF114276281B7AF100B437CA /* 9020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 9020.swift; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		AF4DD31B281583340020F59F /* AlgorithmPractice2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmPractice2; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4DD31E281583340020F59F /* 2869.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2869.swift; sourceTree = "<group>"; };
 		AF4DD325281583620020F59F /* 10250.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10250.swift; sourceTree = "<group>"; };
-		AF54E4732837C88D00A33529 /* 15829.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 15829.swift; sourceTree = "<group>"; };
+		AF54E4732837C88D00A33529 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AF58D83C2843768E00C6D654 /* 1436.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1436.swift; sourceTree = "<group>"; };
 		AF58D83E2843B85000C6D654 /* 10814다시해보기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "10814다시해보기.swift"; sourceTree = "<group>"; };
 		AF5D13CF281AC65C00A608E7 /* 11653.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 11653.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				AF84335A28337775009D28AA /* 11050.swift */,
 				AFE89232283528BA00BF82AF /* 1874.swift */,
 				AF45298428368BE0002BD287 /* 1181다시해보기.swift */,
-				AF54E4732837C88D00A33529 /* 15829.swift */,
+				AF54E4732837C88D00A33529 /* main.swift */,
 				AF5F157F283BCE980007C47B /* 2609.swift */,
 				AF58D83C2843768E00C6D654 /* 1436.swift */,
 				AF58D83E2843B85000C6D654 /* 10814다시해보기.swift */,
@@ -164,7 +164,7 @@
 				AF8B1F06285388980054C656 /* 10828.swift */,
 				AF8B1F0828538DFC0054C656 /* 11866런타입에러마이너스값.swift */,
 				AFDF7DE82856FCD400496513 /* 2805시간줄이기.swift */,
-				AF0AFD1B28A51A8900DD3290 /* main.swift */,
+				AF0AFD1B28A51A8900DD3290 /* 1654.swift */,
 				AF8C058C2858B1F1008E77CD /* 10815.swift */,
 				AF8C058E2858BB81008E77CD /* 2164.swift */,
 				AF8C05902858CC14008E77CD /* 2751시간줄이기.swift */,
@@ -239,7 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF0AFD1C28A51A8900DD3290 /* main.swift in Sources */,
+				AF26B2BB28A67B2100A4C8FA /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
