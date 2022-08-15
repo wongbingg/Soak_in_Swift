@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AFE3BA1128A787AE0040C3EB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE3BA1028A787AE0040C3EB /* main.swift */; };
+		AFA85E8728A8DC7300ABC6E0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE3BA1028A787AE0040C3EB /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +76,7 @@
 		AFE3BA1028A787AE0040C3EB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AFE527D228228EE7007D5395 /* 11729하노이탑.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "11729하노이탑.swift"; sourceTree = "<group>"; };
 		AFE89232283528BA00BF82AF /* 1874.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1874.swift; sourceTree = "<group>"; };
+		AFEDF24E28A89D3100FC70F2 /* 1676.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1676.swift; sourceTree = "<group>"; };
 		AFF2762C28880D1800ADF2F8 /* 11866.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 11866.swift; sourceTree = "<group>"; };
 		AFFE9EBA282002910046763B /* 3053.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3053.swift; sourceTree = "<group>"; };
 		AFFE9EBC282010F60046763B /* 10926.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10926.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 				AFB47BCD284F426100910D29 /* 10989FileIO적용.swift */,
 				AFA9FB9928A3403E00CA0409 /* 11651시간오래.swift */,
 				AFE3BA1028A787AE0040C3EB /* main.swift */,
+				AFEDF24E28A89D3100FC70F2 /* 1676.swift */,
 				AF09AA1528A35E0D00AB99E9 /* 10773.swift */,
 				AF09AA1728A37BD400AB99E9 /* 4949.swift */,
 				AF0AFD1828A4E9C300DD3290 /* 2108시간줄여보기.swift */,
@@ -241,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFE3BA1128A787AE0040C3EB /* main.swift in Sources */,
+				AFA85E8728A8DC7300ABC6E0 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
