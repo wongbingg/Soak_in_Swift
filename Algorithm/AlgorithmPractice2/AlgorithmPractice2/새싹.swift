@@ -1,4 +1,4 @@
-// <5597> 과제 안내신분 ?
+// MARK: - <5597> 과제 안내신분 ?
 
 //var list = Array(0...30)
 //(1...28).forEach { _ in
@@ -12,7 +12,7 @@
 //print(list.max()!)
 
 
-// <2738> 행렬 덧셈
+// MARK: - <2738> 행렬 덧셈
 
 //let input = readLine()!.split(separator: " ").compactMap { Int($0) }
 //let N = input[0]
@@ -43,3 +43,11 @@
 //    }
 //    print("")
 //}
+
+// MARK: - <15964> 이상한 기호
+
+let input = readLine()!.split(separator: " ").compactMap { Int($0) }
+let a = input[0]
+let b = input[1]
+print((a+b)*(a-b))
+
