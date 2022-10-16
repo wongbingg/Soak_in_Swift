@@ -46,8 +46,26 @@
 
 // MARK: - <15964> 이상한 기호
 
-let input = readLine()!.split(separator: " ").compactMap { Int($0) }
-let a = input[0]
-let b = input[1]
-print((a+b)*(a-b))
+//let input = readLine()!.split(separator: " ").compactMap { Int($0) }
+//let a = input[0]
+//let b = input[1]
+//print((a+b)*(a-b))
+
+// MARK: - <2743> 단어 길이재기
+
+//let input = readLine()!
+//print(input.count)
+
+// MARK: - <2744> 대소문자 바꾸기
+
+//let input = readLine()!
+//var result: String = ""
+//input.forEach { char in
+//    if char.isLowercase {
+//        result += char.uppercased()
+//    } else if char.isUppercase {
+//        result += char.lowercased()
+//    }
+//}
+//print(result)
 
